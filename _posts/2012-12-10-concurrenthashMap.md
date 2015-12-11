@@ -13,6 +13,7 @@ excerpt: concurrenthashMap分析。
 
   前几天在美团进行面试，问到这个concurrenthashMap的原理，我当时就晕了，因为我很少接触这个集合，它的工作机制不清楚，面试完之后，百度了一下，特意总结了这篇，和大家一起分享。
 
+---
 ## 分析
     集合是编程中最常用的数据结构。而谈到并发，几乎总是离不开集合这类高级数据结构的支持。比如两个线程需要同时访问一个中间临界区（Queue），比如常会用缓存作为外部文件的副本（HashMap）。这篇文章主要分析jdk1.5的3种并发集合类型（concurrent，copyonright，queue）中的ConcurrentHashMap，让我们从原理上细致的了解它们，能够让我们在深度项目开发中获益非浅。
     在tiger之前，我们使用得最多的数据结构之一就是HashMap和Hashtable。大家都知道，HashMap中未进行同步考虑，而Hashtable则使用了synchronized，带来的直接影响就是可选择，我们可以在单线程时使用HashMap提高效率，而多线程时用Hashtable来保证安全。
@@ -25,8 +26,7 @@ ConcurrentHashMap和Hashtable主要区别就是围绕着锁的粒度以及如何
 接下来，让我们看看ConcurrentHashMap中的几个重要方法，心里知道了实现机制后，使用起来就更加有底气。
 ConcurrentHashMap中主要实体类就是三个：ConcurrentHashMap（整个Hash表）,Segment（桶），HashEntry（节点），对应上面的图可以看出之间的关系。
   get方法（请注意，这里分析的方法都是针对桶的，因为ConcurrentHashMap的最大改进就是将粒度细化到了桶上），首先判断了当前桶的数据个数是否为0，为0自然不可能get到什么，只有返回null，这样做避免了不必要的搜索，也用最小的代价避免出错。然后得到头节点（方法将在下面涉及）之后就是根据hash和key逐个判断是否是指定的值，如果是并且值非空就说明找到了，直接返回；
-程序非常简单，但有一个令人困惑的地方，这句return readValueUnderLock(e)到底是用来干什么的呢？研究它的代码，在锁定之后返回一个值。但这里已经有一句V v = e.value得到了节点的值，这句return readValueUnderLock(e)是否多此一举？事实上，这里完全是为了并发考虑的，这里当v为空时，可能是一个线程正在改变节点，而之前的get操作都未进行锁定，根据bernstein条件，读后写或写后读都会引起数据的不一致，所以这里要对这个e重新上锁再读一遍，以保证得到的是正确值，这里不得不佩服Doug Lee思维的严密性。
-整个get操作只有很少的情况会锁定，相对于之前的Hashtable，并发是不可避免的啊！
+程序非常简单，但有一个令人困惑的地方，这句return readValueUnderLock(e)到底是用来干什么的呢？研究它的代码，在锁定之后返回一个值。但这里已经有一句V v = e.value得到了节点的值，这句return readValueUnderLock(e)是否多此一举？事实上，这里完全是为了并发考虑的，这里当v为空时，可能是一个线程正在改变节点，而之前的get操作都未进行锁定，根据bernstein条件，读后写或写后读都会引起数据的不一致，所以这里要对这个e重新上锁再读一遍，以保证得到的是正确值，这里不得不佩服Doug Lee思维的严密性。整个get操作只有很少的情况会锁定，相对于之前的Hashtable，并发是不可避免的啊！
 <pre><code class="markdown">
 V get(Object key, int hash) {
             if (count != 0) { // read-volatile
