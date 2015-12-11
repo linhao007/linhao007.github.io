@@ -80,7 +80,7 @@ excerpt: fork 了之后同步，fork了别人的代码，保持远程同步。
 <pre><code>git merge upstream/master
 # Updating a422352..5fdff0f
 # Fast-forward
-#  README                    |    9 -------
+#  README                   |    9 -------
 #  README.md                 |    7 ++++++
 #  2 files changed, 7 insertions(+), 9 deletions(-)
 #  delete mode 100644 README
