@@ -11,7 +11,7 @@ excerpt: concurrenthashMap分析。
 
 ## 前言 
   前几天在美团进行面试，问到这个concurrenthashMap的原理，我当时就晕了，因为我很少接触这个集合，它的工作机制不清楚，面试完之后，百度了一下，特意总结了这篇，和大家一起分享。
----
+
 ## 分析
   集合是编程中最常用的数据结构。而谈到并发，几乎总是离不开集合这类高级数据结构的支持。比如两个线程需要同时访问一个中间临界区（Queue），比如常会用缓存作为外部文件的副本（HashMap）。这篇文章主要分析jdk1.5的3种并发集合类型（concurrent，copyonright，queue）中的ConcurrentHashMap，让我们从原理上细致的了解它们，能够让我们在深度项目开发中获益非浅。
   在tiger之前，我们使用得最多的数据结构之一就是HashMap和Hashtable。大家都知道，HashMap中未进行同步考虑，
