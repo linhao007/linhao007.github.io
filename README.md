@@ -1,34 +1,32 @@
-基于jekyll博客应用主题
-===
+# About
 
-pithy是一款适用于jekyll的博客应用主题，基于bootstrap前端框架开发。本着简约的视觉效果设计，目的是希望博客的浏览者能够更多的看到博客内容。
+This is my blog based on jekyll. And I change the style and interactive. If you want to use this model of the blog. **Please give a star at this repository**. Then you can clone it as your blog model.
 
-使用说明
-===
+You can visit [here](http://gaohaoyang.github.io) to see this blog.
 
-本主题是自由，免费，开源的，你可以克隆为新的仓库作为自己的博客。当然，在克隆仓库时为本主题加颗星，在使用时注明power by pithy，那将是对我最大的支持和鼓励。
+---
 
-主题效果
-===
-- 首页
-- 
-![首页](http://7xlgu7.com1.z0.glb.clouddn.com/pithy-index.jpg)
+这是我的博客，基于 jekyll。我改了所有默认的样式和交互。如果你想使用这个博客模板。**请先在这个仓库上点个star吧**，这也是对我的肯定和鼓励，谢谢了。然后你可以克隆这个仓库用作你自己的博客。
 
-- 列表
-- 
-![列表](http://7xlgu7.com1.z0.glb.clouddn.com/pithy-list.jpg)
+博客访问地址：[点击这里](http://gaohaoyang.github.io)
 
-- 文章
-- 
-![文章](http://7xlgu7.com1.z0.glb.clouddn.com/pithy-post.jpg)
+**使用时请注明模板来源:  Jekyll theme by [Gaohaoyang](https://github.com/Gaohaoyang/gaohaoyang.github.io)**
 
-反馈
-===
+<!--
 
-在你浏览或使用本主题时，发现问题或者是有好的建议，希望能够在这里给予反馈。
+## 被引用信息
 
-[New Issue](https://github.com/guovz/pithy/issues/new)
+使用了我的模板并写明来源的人：   
 
-License
-===
-[MIT License](https://github.com/guovz/pithy/blob/gh-pages/LICENSE.md)
+* [dreamholy](http://dreamholy.github.io/)
+
+没有注明来源的人：
+
+* [yangshuailing](http://yangshuailing.github.io/com/)
+* [huapu728](http://huapu728.github.io/)
+* [greatbuger](http://greatbuger.github.io/) 
+
+
+-->
+
+
