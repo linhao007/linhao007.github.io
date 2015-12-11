@@ -12,14 +12,14 @@ excerpt: concurrenthashMap分析。
 ## 前言 
 
   前几天在美团进行面试，问到这个concurrenthashMap的原理，我当时就晕了，因为我很少接触这个集合，它的工作机制不清楚，面试完之后，百度了一下，特意总结了这篇，和大家一起分享。
-
 ---
 ## 分析
     集合是编程中最常用的数据结构。而谈到并发，几乎总是离不开集合这类高级数据结构的支持。
     比如两个线程需要同时访问一个中间临界区（Queue），比如常会用缓存作为外部文件的副本（HashMap）。
-    这篇文章主要分析jdk1.5的3种并发集合类型（concurrent，copyonright，queue）中的ConcurrentHashMap，让我们从原理上细致的了解它们，能够让我们在深度项目开发中获益非浅。
+    这篇文章主要分析jdk1.5的3种并发集合类型（concurrent，copyonright，queue）中的ConcurrentHashMap，让我们从原理上细致的了解它们，
+    能够让我们在深度项目开发中获益非浅。
     在tiger之前，我们使用得最多的数据结构之一就是HashMap和Hashtable。大家都知道，HashMap中未进行同步考虑，而Hashtable则使用了synchronized，带来的直接影响就是可选择，我们可以在单线程时使用HashMap提高效率，而多线程时用Hashtable来保证安全。
-当我们享受着jdk带来的便利时同样承受它带来的不幸恶果。通过分析Hashtable就知道，synchronized是针对整张Hash表的，即每次锁住整张表让线程独占，安全的背后是巨大的浪费，慧眼独具的Doug Lee立马拿出了解决方案----ConcurrentHashMap。
+    当我们享受着jdk带来的便利时同样承受它带来的不幸恶果。通过分析Hashtable就知道，synchronized是针对整张Hash表的，即每次锁住整张表让线程独占，安全的背后是巨大的浪费，慧眼独具的Doug Lee立马拿出了解决方案----ConcurrentHashMap。
 ConcurrentHashMap和Hashtable主要区别就是围绕着锁的粒度以及如何锁。
 ![如图](http://p.blog.csdn.net/images/p_blog_csdn_net/liuzhengkang/EntryImages/20080912/58adc9e7b4725349c149a.jpg)  
     左边便是Hashtable的实现方式---锁整个hash表；而右边则是ConcurrentHashMap的实现方式---锁桶（或段）。ConcurrentHashMap将hash表分为16个桶（默认值），诸如get,put,remove等常用操作只锁当前需要用到的桶。试想，原来只能一个线程进入，现在却能同时16个写线程进入（写线程才需要锁定，而读线程几乎不受限制，之后会提到），并发性的提升是显而易见的。
@@ -145,5 +145,5 @@ static final class HashEntry {
     }
 </code></pre>
    以上，分析了几个最简单的操作，限于篇幅，这里不再对rehash或iterator等实现进行讨论，有兴趣可以参考src。
-    接下来实际上还有一个疑问，ConcurrentHashMap跟HashMap相比较性能到底如何。
+   接下来实际上还有一个疑问，ConcurrentHashMap跟HashMap相比较性能到底如何。
 	这在Brian Goetz的文章中已经有过评测[Java 理论与实践: 并发集合类](http://www.ibm.com/developerworks/cn/java/j-jtp07233/)  .
