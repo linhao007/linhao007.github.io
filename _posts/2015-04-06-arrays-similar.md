@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "判断两个数组是否相似 (arraysSimilar)"
-date:   2015-04-06 15:14:54
-categories: JavaScript
-excerpt: JavaScript 算法，typeof instanceof Object.prototype.toString.apply() 的使用方法。完成 arraysSimilar 方法，判断传入的两个数组是否相似。请在index.html文件中，编写arraysSimilar函数，实现判断传入的两个数组是否相似。
+title:  "java基础之java关键字"
+date:   2015-12-10 15:14:54
+categories: java基础
+excerpt:java基础。
 ---
 
 * content
