@@ -10,7 +10,6 @@ excerpt: concurrenthashMap分析。
 {:toc}
 
 ## 前言 
-
   前几天在美团进行面试，问到这个concurrenthashMap的原理，我当时就晕了，因为我很少接触这个集合，它的工作机制不清楚，面试完之后，百度了一下，特意总结了这篇，和大家一起分享。
 ---
 ## 分析
@@ -18,7 +17,8 @@ excerpt: concurrenthashMap分析。
     比如两个线程需要同时访问一个中间临界区（Queue），比如常会用缓存作为外部文件的副本（HashMap）。
     这篇文章主要分析jdk1.5的3种并发集合类型（concurrent，copyonright，queue）中的ConcurrentHashMap，让我们从原理上细致的了解它们，
     能够让我们在深度项目开发中获益非浅。
-    在tiger之前，我们使用得最多的数据结构之一就是HashMap和Hashtable。大家都知道，HashMap中未进行同步考虑，而Hashtable则使用了synchronized，带来的直接影响就是可选择，我们可以在单线程时使用HashMap提高效率，而多线程时用Hashtable来保证安全。
+    在tiger之前，我们使用得最多的数据结构之一就是HashMap和Hashtable。大家都知道，HashMap中未进行同步考虑，
+ 而Hashtable则使用了synchronized，带来的直接影响就是可选择，我们可以在单线程时使用HashMap提高效率，而多线程时用Hashtable来保证安全。
     当我们享受着jdk带来的便利时同样承受它带来的不幸恶果。通过分析Hashtable就知道，synchronized是针对整张Hash表的，即每次锁住整张表让线程独占，安全的背后是巨大的浪费，慧眼独具的Doug Lee立马拿出了解决方案----ConcurrentHashMap。
 ConcurrentHashMap和Hashtable主要区别就是围绕着锁的粒度以及如何锁。
 ![如图](http://p.blog.csdn.net/images/p_blog_csdn_net/liuzhengkang/EntryImages/20080912/58adc9e7b4725349c149a.jpg)  
