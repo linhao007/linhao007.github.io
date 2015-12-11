@@ -65,6 +65,7 @@ transient是Java语言的关键字，用来表示一个域不是该对象串行�
 &nbsp;&nbsp;volatile关键字用于表示可以被多个线程异步修改的成员变量。
 注意：volatile关键字在许多Java虚拟机中都没有实现。volatile的目标用途是为了确保所有线程所看到的指定变量的值都是相同的。
 Java语言中的volatile变量可以被看作是一种“程度较轻的synchronized”；与synchronized块相比，volatile变量所需的编码较少，并且运行时开销也较少，但是它所能实现的功能也仅是synchronized的一部分。
+
 ## 3.程序控制语句
 1)break跳出，中断<br/>
 &nbsp;&nbsp;break关键字用于提前退出for、while或do循环，或者在switch语句中用来结束case块。
@@ -109,6 +110,7 @@ case块没有隐式结束点。break语句通常在每个case块末尾使用，�
 &nbsp;&nbsp;default关键字用来标记switch语句中的默认分支。
 default块没有隐式结束点。break语句通常在每个case或default块的末尾使用，以便在完成块时退出switch语句。
 如果没有default语句，其参数与任何case块都不匹配的switch语句将不执行任何操作。
+
 ## 4.错误处理
 1)try捕获异常<br/>
 &nbsp;&nbsp;try关键字用于包含可能引发异常的语句块。
@@ -128,6 +130,7 @@ throw语句将java.lang.Throwable作为参数。Throwable在调用栈中向上�
 throws关键字将逗号分隔的java.lang.Throwables列表作为参数。
 引发非RuntimeException异常的任何方法还必须在方法声明中使用throws修饰符来声明它引发的异常。
 要在try-catch块中包含带throws子句的方法的调用，必须提供该方法的调用者。
+
 ## 5.包相关
 1)import引入<br/>
 &nbsp;&nbsp;import关键字使一个包中的一个或所有类在当前Java源文件中可见。可以不使用完全限定的类名来引用导入的类。
@@ -137,6 +140,7 @@ throws关键字将逗号分隔的java.lang.Throwables列表作为参数。
 package语句（如果出现）必须是Java源文件中的第一个非注释性文本。
 例:java.lang.Object。
 如果Java源文件不包含package语句，在该文件中定义的类将位于“默认包”中。请注意，不能从非默认包中的类引用默认包中的类。
+
 ## 6.基本类型
 1)boolean布尔型<br/>
 &nbsp;&nbsp;boolean是Java原始类型。boolean变量的值可以是true或false。
@@ -182,6 +186,7 @@ Java中的所有整数值都是32位的int值，除非值后面有l或L（如235
 &nbsp;&nbsp;true关键字表示boolean变量的两个合法值中的一个。<br>
 11)false 假<br/>
 &nbsp;&nbsp;false关键字代表boolean变量的两个合法值之一。
+
 ## 7.变量引用
 1)super父类,超类<br/>
 &nbsp;&nbsp;super关键字用于引用使用该关键字的类的超类。
@@ -193,6 +198,7 @@ super.<methodName>()表示调用超类的方法。只有在如下情况中才需
 3)void无返回值<br/>
 &nbsp;&nbsp;void关键字表示null类型。
 void可以用作方法的返回类型，以指示该方法不返回值。
+
 ## 8.保留字
 &nbsp;&nbsp;正确识别java语言的关键字（keyword）和保留字（reservedword）是十分重要的。Java的关键字对java的编译器有特殊的意义，他们用来表示一种数据类型，或者表示程序的结构等。保留字是为java预留的关键字，他们虽然现在没有作为关键字，但在以后的升级版本中有可能作为关键字。
 识别java语言的关键字，不要和其他语言如c/c++的关键字混淆。
@@ -210,6 +216,7 @@ const和goto是java的保留字。所有的关键字都是小写<br/>
 　　４、将第三步的.cpp文件编译成动态链接库文件；
 　　５、在Java中用System.loadLibrary()方法加载第四步产生的动态链接库文件，这个native()方法就可以在Java中被访问了。<br/>
 4)assert 断言
+
 ### 1.1. 语法表示
 两种表达式，分别如下：
 assertexpression1;
@@ -219,6 +226,7 @@ assertexpression1: expression2;
 1. 在运行时，如果关闭了assertion功能，这些语句将不起任何作用。<br/>
 2. 如果打开了assertion功能，那么expression1的值将被计算，如果它的值为false，该语句强抛出一个AssertionError对象。如果assertion语句包括expression2参数，程序将计算出expression2的结果，然后将这个结果作为AssertionError的构造函数的参数，来创建AssertionError对象，并抛出该对象；如果expression1值为true，expression2将不被计算。<br/>
 3. 一种特殊情况是，如果在计算表达式时，表达式本身抛出Exception，那么assert将停止运行，而抛出这个Exception。
+
 ### 1.3. 运行
 1. 这种程序必须在JDK1.4(或者更高版本)的JRE下运行。<br/>
 2. 参数-esa和-dsa：<br/>
@@ -270,7 +278,9 @@ java-dsa
 java-dsa:MyClass1:pkg1
 关闭MyClass1和pkg1包的assertion
 其中...代表，此包和其子包的含义。例如我们有两个包为pkg1和pkg1.subpkg。那么pkg1...就代表pkg1和pkg1.subpkg两个包。
+
 ### 1.4. Assert使用场合
+
 #### 1.4.1. 适宜使用场合
 1. 使用assert来检查private和protected函数中的参数预处理（preconditions）和后处理（postconditions）。
 2. 使用assert来检查参数或者变量的特殊值，一旦参数或者变量为这些特殊值，则跟这些参数有变量有关的操作不应该出现。
