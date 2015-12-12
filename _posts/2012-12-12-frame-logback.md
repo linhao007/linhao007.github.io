@@ -171,8 +171,8 @@ private static Logger logger =  LoggerFactory.getLogger(TestLog.class);
 
 结果打印出：<br/>
 <pre><code class="markdown">
-2015-12-12 17:32:20,555 [main] INFO  [com.daojia_58.linhao.web.UserController] - hello world
-2015-12-12 17:32:20,566 [main] ERROR [com.daojia_58.linhao.web.UserController] - 出错管理
-2015-12-12 17:32:20,567 [main] WARN  [com.daojia_58.linhao.web.UserController] - hello world
+2015-12-12 20:45:44,372 [main] INFO  [com.daojia_58.linhao.test.LogTest] - hello world
+2015-12-12 20:45:44,381 [main] ERROR [com.daojia_58.linhao.test.LogTest] - 出错管理
+2015-12-12 20:45:44,381 [main] WARN  [com.daojia_58.linhao.test.LogTest] - hello world
 </code></pre><br/>
 有不同观点的或者我的理解不对的地方请联系我，咱们一起讨论进步。
