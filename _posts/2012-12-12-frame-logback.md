@@ -93,29 +93,29 @@ excerpt: logbak搭建
 ### 在logback.xml配置文件中设置日志格式
 &nbsp;&nbsp;在上步完成之后就要对我们的日志进行格式配置了，一个好的日志格式对以后海量日志查询出bug有很大的帮助。其中我们要将logback.xml放置在类路径下，便于管理
         <configuration>
-    	<!-- 设置日志在控制台上打印的格式 分别对应日志生成时间+对应的站点执行方法+日志级别+日志出现的类+日志消息 -->
+    	设置日志在控制台上打印的格式 分别对应日志生成时间+对应的站点执行方法+日志级别+日志出现的类+日志消息
     	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
     		<encoder>
     			<pattern>%d [%t] %-5p [%c] - %m%n</pattern>
     		</encoder>
     	</appender>
-    	<!-- 演示按时间滚动的策略 -->
+    	演示按时间滚动的策略
     	<appender name="linhao007"
     		class="ch.qos.logback.core.rolling.RollingFileAppender">
     		<file>${catalina.base}/logs/linhao007.log</file>
-    		<!-- 设置日志滚动按照时间的日志命名  -->
+    		设置日志滚动按照时间的日志命名
     		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-    			<!-- 设置产生日志存在的地方 -->
+    			设置产生日志存在的地方
     			<fileNamePattern>/tmp/logs/linhao007.%d{yyyy-MM-dd}.log
     			</fileNamePattern>
-    			<!-- 保留 30天数据，默认无限 -->
+    		        保留 30天数据，默认无限 
     			<maxHistory>30</maxHistory>
     		</rollingPolicy>
     		<encoder>
     			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}####%m%n</pattern>
     		</encoder>
     	</appender>
-    	<!--myibatis log configure 并將这些日志交于root去管理，本身并不打印-->
+    	myibatis log configure 并將这些日志交于root去管理，本身并不打印
     	<logger name="com.apache.ibatis" level="TRACE" additivity="false">
     		<appender-ref ref="sql" />
     	</logger>
@@ -129,8 +129,8 @@ excerpt: logbak搭建
     		additivity="false">
     		<appender-ref ref="sql" />
     	</logger>
-    	<!-- 这个配置是为了管理整个自定义日志系统，root将日志的级别为“INFO”及大于“INFO”级别的日志信息交给已经配置好的名称为“console” 
-    		的appender处理，“console”appender将信息打印到控制台 ,name属性表示在这个包下所有信息都会被日志管理 ，并在linhao007指定文件中生成日志文件-->
+    	这个配置是为了管理整个自定义日志系统，root将日志的级别为“INFO”及大于“INFO”级别的日志信息交给已经配置好的名称为“console” 
+    		的appender处理，“console”appender将信息打印到控制台 ,name属性表示在这个包下所有信息都会被日志管理 ，并在linhao007指定文件中生成日志文件
     	<root name="com.daojia_58.linhao" level="info">
     		<appender-ref ref="console" />
     		<appender-ref ref="linhao007" />
