@@ -91,7 +91,8 @@ excerpt: logbak搭建
 
 
 ### 在logback.xml配置文件中设置日志格式
-&nbsp;&nbsp;在上步完成之后就要对我们的日志进行格式配置了，一个好的日志格式对以后海量日志查询出bug有很大的帮助。其中我们要将logback.xml放置在类路径下，便于管理
+&nbsp;&nbsp;在上步完成之后就要对我们的日志进行格式配置了，一个好的日志格式对以后海量日志查询出bug有很大的帮助。其中我们要将logback.xml放置在类路径下，便于管理<br/>
+    ```
         <configuration>
     	设置日志在控制台上打印的格式 分别对应日志生成时间+对应的站点执行方法+日志级别+日志出现的类+日志消息
     	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
@@ -136,7 +137,7 @@ excerpt: logbak搭建
     		<appender-ref ref="linhao007" />
     	</root>
        </configuration>
-  
+    ```  
 
 ### 在web.xml中进行日志监听配置
 &nbsp;&nbsp;你以为这样就万事大吉了么？NO!NO！NO!too young too simple!我们仅仅只是搭建了logback,但是还没有交给容器管理监听，所以我们还需要给web.xml配置监听：
