@@ -91,9 +91,10 @@ excerpt: logbak搭建
 
 
 ### 在logback.xml配置文件中设置日志格式
-&nbsp;&nbsp;在上步完成之后就要对我们的日志进行格式配置了，一个好的日志格式对以后海量日志查询出bug有很大的帮助。其中我们要将logback.xml放置在类路径下，便于管理，其中设置日志在控制台上打印的格式 分别对应日志生成时间+对应的方法+日志级别+日志出现的类+日志消息<br/>
+&nbsp;&nbsp;在上步完成之后就要对我们的日志进行格式配置了，一个好的日志格式对以后海量日志查询出bug有很大的帮助。其中我们要将logback.xml放置在类路径下，便于管理<br/>
 <pre><code class="markdown">
-<p>&lt;appender name=&quot;console&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
+<p>其中设置日志在控制台上打印的格式 分别对应日志生成时间+对应的方法+日志级别+日志出现的类+日志消息
+&lt;appender name=&quot;console&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
     &lt;encoder&gt;
     &lt;pattern&gt;%d [%t] %-5p [%c] - %m%n&lt;/pattern&gt;
     &lt;/encoder&gt;
