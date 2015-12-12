@@ -60,14 +60,12 @@ excerpt: logbak搭建
 ### pom.xml配置，映入相应的jar文件
 &nbsp;&nbsp;在maven项目中加入以下配置，maven自动从远程仓库中下载相应版本的jar包，不是maven项目的同学只要在lib目录下放置一下几个jar包即可，我就不多说，您懂得！<br/>
 ```
-<properties>
-        <slf4j-version>1.7.5</slf4j-version>
-	<logback-core-version>1.0.13</logback-core-version>
-	<logback-classic-version>1.0.13</logback-classic-version>
-</properties>
-```
-```
-                <!-- logback start -->
+       <properties>
+                <slf4j-version>1.7.5</slf4j-version>
+	        <logback-core-version>1.0.13</logback-core-version>
+	        <logback-classic-version>1.0.13</logback-classic-version>
+        </properties>
+        <!-- logback start -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -89,7 +87,7 @@ excerpt: logbak搭建
 			<version>${logback-classic-version}</version>
 			<type>jar</type>
 		</dependency>
-		<!-- logback end -->
+        <!-- logback end -->
 ```
 
 ### 在logback.xml配置文件中设置日志格式
