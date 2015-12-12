@@ -139,19 +139,20 @@ excerpt: logbak搭建
     `</pre>
 
 ### 在web.xml中进行日志监听配置
-&nbsp;&nbsp;你以为这样就万事大吉了么？NO!NO！NO!too young too simple!我们仅仅只是搭建了logback,但是还没有交给容器管理监听，所以我们还需要给web.xml配置监听：<br/>
-```
-        <context-param>
-		<param-name>logbackConfigLocation</param-name>
-		<param-value>
-			classpath*:/logback.xml
-		</param-value>
-	</context-param>
-	<listener>
-		<listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>
-	</listener>
+&nbsp;&nbsp;你以为这样就万事大吉了么？NO!NO！NO!too young too simple!我们仅仅只是搭建了logback,但是还没有交给容器管理监听，所以我们还需要给web.xml配置监听：
 
-```
+    ```
+            <context-param>
+    		<param-name>logbackConfigLocation</param-name>
+    		<param-value>
+    			classpath*:/logback.xml
+    		</param-value>
+    	</context-param>
+    	<listener>
+    		<listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>
+    	</listener>
+
+    ```
 
 ## 结果分析 
 &nbsp;&nbsp;进行上面的配置之后整个logback就搭建好了，接下来是如何使用日志了，首先我们要在日志监听的类上定义日志操作对象：<br/>
