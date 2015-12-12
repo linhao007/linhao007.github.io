@@ -114,7 +114,7 @@ excerpt: logbak搭建
 			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}####%m%n</pattern>
 		</encoder>
 	</appender>
->>
+
 	<!--myibatis log configure 并將这些日志交于root去管理，本身并不打印-->
 	<logger name="com.apache.ibatis" level="TRACE" additivity="false">
 		<appender-ref ref="sql" />
@@ -136,7 +136,7 @@ excerpt: logbak搭建
 		<appender-ref ref="console" />
 		<appender-ref ref="linhao007" />
 	</root>
->>
+
 ### 在web.xml中进行日志监听配置
 &nbsp;&nbsp;你以为这样就万事大吉了么？NO!NO！NO!too young too simple!我们仅仅只是搭建了logback,但是还没有交给容器管理监听，所以我们还需要给web.xml配置监听：
 
