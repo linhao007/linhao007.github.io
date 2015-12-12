@@ -93,7 +93,6 @@ excerpt: logbak搭建
 ### 在logback.xml配置文件中设置日志格式
 &nbsp;&nbsp;在上步完成之后就要对我们的日志进行格式配置了，一个好的日志格式对以后海量日志查询出bug有很大的帮助。其中我们要将logback.xml放置在类路径下，便于管理<br/>
 <pre><code class="markdown">
-<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<!-- 设置日志在控制台上打印的格式 分别对应日志生成时间+对应的站点执行方法+日志级别+日志出现的类+日志消息 -->
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
@@ -101,7 +100,6 @@ excerpt: logbak搭建
 			<pattern>%d [%t] %-5p [%c] - %m%n</pattern>
 		</encoder>
 	</appender>
-
 	<!-- 演示按时间滚动的策略 -->
 	<appender name="linhao007"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -118,7 +116,6 @@ excerpt: logbak搭建
 			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}####%m%n</pattern>
 		</encoder>
 	</appender>
-
 	<!--myibatis log configure 并將这些日志交于root去管理，本身并不打印-->
 	<logger name="com.apache.ibatis" level="TRACE" additivity="false">
 		<appender-ref ref="sql" />
@@ -133,7 +130,6 @@ excerpt: logbak搭建
 		additivity="false">
 		<appender-ref ref="sql" />
 	</logger>
-
 	<!-- 这个配置是为了管理整个自定义日志系统，root将日志的级别为“INFO”及大于“INFO”级别的日志信息交给已经配置好的名称为“console” 
 		的appender处理，“console”appender将信息打印到控制台 ,name属性表示在这个包下所有信息都会被日志管理 ，并在linhao007指定文件中生成日志文件-->
 	<root name="com.daojia_58.linhao" level="info">
@@ -165,10 +161,10 @@ private static Logger logger =  LoggerFactory.getLogger(TestLog.class);
 在创建这个对象的时候必须传入日志监听类如上面的：TestLog.clss;之后再相应的地方打下日志，我在这里列举出5中日志类型：<br/>
 <pre><code class="markdown">
         logger.info("hello world");
-		logger.error("出错管理"+e);
-		logger.trace("hello world");
-		logger.warn("hello world");
-		logger.debug("hello world");
+	logger.error("出错管理"+e);
+	logger.trace("hello world");
+	logger.warn("hello world");
+	logger.debug("hello world");
 </code></pre><br/>
 
 结果打印出：<br/>
