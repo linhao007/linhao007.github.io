@@ -62,9 +62,11 @@ excerpt: logbak搭建
 ```
 <properties>
         <slf4j-version>1.7.5</slf4j-version>
-		<logback-core-version>1.0.13</logback-core-version>
-		<logback-classic-version>1.0.13</logback-classic-version>
+	<logback-core-version>1.0.13</logback-core-version>
+	<logback-classic-version>1.0.13</logback-classic-version>
 </properties>
+```
+```
                 <!-- logback start -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
