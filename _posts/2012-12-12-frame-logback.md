@@ -98,7 +98,6 @@ excerpt: logbak搭建
 			<pattern>%d [%t] %-5p [%c] - %m%n</pattern>
 		</encoder>
 	</appender>
-
 	<!-- 演示按时间滚动的策略 -->
 	<appender name="linhao007"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
