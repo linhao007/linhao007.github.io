@@ -21,7 +21,7 @@ icon: glyphicon-heart
 
 ### 联系我
 
-* email：[15101538245@163.com](mailto:{{ site.email }})
+* email：[15101538245@163.com]
 * QQ：976220342
 * Weibo：[linhao](http://weibo.com/3162317635/profile?topnav=1&wvr=6)
 * CSDN: [linhao](http://blog.csdn.net/linhu007?viewmode=contents)
