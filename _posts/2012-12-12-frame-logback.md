@@ -140,8 +140,7 @@ excerpt: logbak搭建
 	</root>
 
 ### 在web.xml中进行日志监听配置
-&nbsp;&nbsp;你以为这样就万事大吉了么？NO!NO！NO!too young too simple!我们仅仅只是搭建了logback,但是还没有交给容器管理监听，所以我们还需要给web.xml配置监听(当然也可以不用配置这个监听因为:
-LogFatory.getLogger的时候会去classpath下面找默认的logback.xml，然后就会用之前配置好的格式，日志级别，日志路径输出日志，一般日志输出的文件在项目的根目录下，比如我的项目在D盘，输出的格式是/tmp/logs/linhao007.%d{yyyy-MM-dd}.log，那么会把日志输出到D:/tmp/logs/linhao007.2015.12.13.log中)：
+&nbsp;&nbsp;你以为这样就万事大吉了么？NO!NO！NO!too young too simple!我们仅仅只是搭建了logback,但是还没有交给容器管理监听，所以我们还需要给web.xml配置监听(当然也可以不用配置这个监听因为:LogFatory.getLogger的时候会去classpath下面找默认的logback.xml，然后就会用之前配置好的格式，日志级别，日志路径输出日志，一般日志输出的文件在项目的根目录下，比如我的项目在D盘，输出的格式是/tmp/logs/linhao007.%d{yyyy-MM-dd}.log，那么会把日志输出到D:/tmp/logs/linhao007.2015.12.13.log中)：
 
     ```
             <context-param>
