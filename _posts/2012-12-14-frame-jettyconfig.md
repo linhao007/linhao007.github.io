@@ -44,31 +44,30 @@ Tomcat目前应用比较广泛，对JavaEE和Servlet的支持更加全面，很�
 
 ## IntelliJ IDEA的maven项目如何使用jetty启动
 1、首先我们要在maven中安装jetty插件（其实就是下载一个jar包,用来与idea进行集成）这个插件只需要在pom.xml中进行如下配置：</br>
- <!--jetty插件-->
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty.version}</version>
-                <configuration>
-                    <systemProperties>
-                        <systemProperty>
-                            <name>spring.profiles.active</name>
-                            <value>production</value>
-                        </systemProperty>
-                    </systemProperties>
-                    <useTestClasspath>true</useTestClasspath>
-                    <war>${project.basedir}/target/platform-admin.war</war>
-                    <webAppConfig>
-                        <contextPath>/${project.artifactId}</contextPath>
-                    </webAppConfig>
-                    <connectors>                    
-                        <!--可以自定义端口号，也可以在idea自己设置，下面会讲到如何在idea中设置端口号-->
-                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-                            <port>8086</port>
-                        </connector>
-                    </connectors>
-                </configuration>
-            </plugin>
+<p> &lt;!--jetty插件--&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;
+                &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;${jetty.version}&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;systemProperties&gt;
+                        &lt;systemProperty&gt;
+                            &lt;name&gt;spring.profiles.active&lt;/name&gt;
+                            &lt;value&gt;production&lt;/value&gt;
+                        &lt;/systemProperty&gt;
+                    &lt;/systemProperties&gt;
+                    &lt;useTestClasspath&gt;true&lt;/useTestClasspath&gt;
+                    &lt;war&gt;${project.basedir}/target/platform-admin.war&lt;/war&gt;
+                    &lt;webAppConfig&gt;
+                        &lt;contextPath&gt;/${project.artifactId}&lt;/contextPath&gt;
+                    &lt;/webAppConfig&gt;
+                    &lt;connectors&gt;                  <br/>                        &lt;!--可以自定义端口号，也可以在idea自己设置，下面会讲到如何在idea中设置端口号--&gt;
+                        &lt;connector implementation=&quot;org.eclipse.jetty.server.nio.SelectChannelConnector&quot;&gt;
+                            &lt;port&gt;8086&lt;/port&gt;
+                        &lt;/connector&gt;
+                    &lt;/connectors&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;</p>
 
 2、之后配置jetty启动所依赖的jar包<br/>
 <pre><code class="markdown">
