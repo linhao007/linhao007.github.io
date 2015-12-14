@@ -1,51 +1,51 @@
 ---
 layout: post
-title:  "ÔÚspring bootÀïÃæ½øĞĞjettyµÄÆô¶¯"
+title:  "åœ¨spring booté‡Œé¢è¿›è¡Œjettyçš„å¯åŠ¨"
 date:   2015-12-14 14:06:05
-categories: ÆóÒµ¿ò¼Ü
-excerpt: ÔÚIntelliJ IDEAµÄmavenÏîÄ¿ÈçºÎÊ¹ÓÃjettyÆô¶¯
+categories: ä¼ä¸šæ¡†æ¶
+excerpt: åœ¨IntelliJ IDEAçš„mavené¡¹ç›®å¦‚ä½•ä½¿ç”¨jettyå¯åŠ¨
 ---
 
 * content
 {:toc}
 
-## Ç°ÑÔ 
-  &nbsp;&nbsp;&nbsp;&nbsp;ÒÔÇ°Ò»Ö±Ê¹ÓÃeclipse + tomcatÀ´Æô¶¯ÏîÄ¿£¬½ñÌìÔÚÔËĞĞÒ»¸öÏîÄ¿µÄÊ±ºò±»Ñ§³¤¿´µ½ÁË£¬
-  ËûËµÓÃtomcatÆô¶¯ºÜÂı£¬½ĞÎÒÊÔÒ»ÊÔjettyÀ´Æô¶¯webÏîÄ¿,ËùÒÔÌØÒâÁË½âÁËÒ»ÏÂjetty.<br/>
+## å‰è¨€ 
+  &nbsp;&nbsp;&nbsp;&nbsp;ä»¥å‰ä¸€ç›´ä½¿ç”¨eclipse + tomcatæ¥å¯åŠ¨é¡¹ç›®ï¼Œä»Šå¤©åœ¨è¿è¡Œä¸€ä¸ªé¡¹ç›®çš„æ—¶å€™è¢«å­¦é•¿çœ‹åˆ°äº†ï¼Œ
+  ä»–è¯´ç”¨tomcatå¯åŠ¨å¾ˆæ…¢ï¼Œå«æˆ‘è¯•ä¸€è¯•jettyæ¥å¯åŠ¨webé¡¹ç›®,æ‰€ä»¥ç‰¹æ„äº†è§£äº†ä¸€ä¸‹jetty.<br/>
   
-## Ç³Ì¸jetty
-&nbsp;&nbsp;&nbsp;&nbsp;Jetty ÊÇÒ»¸ö¿ªÔ´µÄservletÈİÆ÷£¬ËüÎª»ùÓÚJavaµÄwebÈİÆ÷£¬ÀıÈçJSPºÍservletÌá¹©ÔËĞĞ»·¾³¡£JettyÊÇÊ¹ÓÃJavaÓïÑÔ±àĞ´µÄ£¬ËüµÄAPIÒÔÒ»×éJAR°üµÄĞÎÊ½·¢²¼¡£
-¿ª·¢ÈËÔ±¿ÉÒÔ½«JettyÈİÆ÷ÊµÀı»¯³ÉÒ»¸ö¶ÔÏó£¬¿ÉÒÔÑ¸ËÙÎªÒ»Ğ©¶ÀÁ¢ÔËĞĞ£¨stand-alone£©µÄJavaÓ¦ÓÃÌá¹©ÍøÂçºÍwebÁ¬½Ó¡£[Õª×Ô°Ù¶È°Ù¿Æ](http://baike.baidu.com/link?url=qISf-60N2e1v1DqK60Z5ZOLgZw_EM38M59mhbfzBAZqkIg1o0PPKsIsDD80Q4K14SeoRRBEpieEtWQTWdsXDpq) <br/>
+## æµ…è°ˆjetty
+&nbsp;&nbsp;&nbsp;&nbsp;Jetty æ˜¯ä¸€ä¸ªå¼€æºçš„servletå®¹å™¨ï¼Œå®ƒä¸ºåŸºäºJavaçš„webå®¹å™¨ï¼Œä¾‹å¦‚JSPå’Œservletæä¾›è¿è¡Œç¯å¢ƒã€‚Jettyæ˜¯ä½¿ç”¨Javaè¯­è¨€ç¼–å†™çš„ï¼Œå®ƒçš„APIä»¥ä¸€ç»„JARåŒ…çš„å½¢å¼å‘å¸ƒã€‚
+å¼€å‘äººå‘˜å¯ä»¥å°†Jettyå®¹å™¨å®ä¾‹åŒ–æˆä¸€ä¸ªå¯¹è±¡ï¼Œå¯ä»¥è¿…é€Ÿä¸ºä¸€äº›ç‹¬ç«‹è¿è¡Œï¼ˆstand-aloneï¼‰çš„Javaåº”ç”¨æä¾›ç½‘ç»œå’Œwebè¿æ¥ã€‚[æ‘˜è‡ªç™¾åº¦ç™¾ç§‘](http://baike.baidu.com/link?url=qISf-60N2e1v1DqK60Z5ZOLgZw_EM38M59mhbfzBAZqkIg1o0PPKsIsDD80Q4K14SeoRRBEpieEtWQTWdsXDpq) <br/>
 
 
-## jettyºÍtomcatµÄÇø±ğ
-###ÏàÍ¬µã£º
-&nbsp;&nbsp;&nbsp;&nbsp;1.      TomcatºÍJetty¶¼ÊÇÒ»ÖÖServletÒıÇæ£¬ËûÃÇ¶¼Ö§³Ö±ê×¼µÄservlet¹æ·¶ºÍJavaEEµÄ¹æ·¶¡£<br/>
+## jettyå’Œtomcatçš„åŒºåˆ«
+###ç›¸åŒç‚¹ï¼š
+&nbsp;&nbsp;&nbsp;&nbsp;1.      Tomcatå’ŒJettyéƒ½æ˜¯ä¸€ç§Servletå¼•æ“ï¼Œä»–ä»¬éƒ½æ”¯æŒæ ‡å‡†çš„servletè§„èŒƒå’ŒJavaEEçš„è§„èŒƒã€‚<br/>
  
  
-### ²»Í¬µã£º
-&nbsp;&nbsp;&nbsp;&nbsp;1.      ¼Ü¹¹±È½Ï<br/>
-JettyµÄ¼Ü¹¹±ÈTomcatµÄ¸üÎª¼òµ¥<br/>
-JettyµÄ¼Ü¹¹ÊÇ»ùÓÚHandlerÀ´ÊµÏÖµÄ£¬Ö÷ÒªµÄÀ©Õ¹¹¦ÄÜ¶¼¿ÉÒÔÓÃHandlerÀ´ÊµÏÖ£¬À©Õ¹¼òµ¥¡£<br/>
-TomcatµÄ¼Ü¹¹ÊÇ»ùÓÚÈİÆ÷Éè¼ÆµÄ£¬½øĞĞÀ©Õ¹ÊÇĞèÒªÁË½âTomcatµÄÕûÌåÉè¼Æ½á¹¹£¬²»Ò×À©Õ¹¡£<br/><br/>
+### ä¸åŒç‚¹ï¼š
+&nbsp;&nbsp;&nbsp;&nbsp;1.      æ¶æ„æ¯”è¾ƒ<br/>
+Jettyçš„æ¶æ„æ¯”Tomcatçš„æ›´ä¸ºç®€å•<br/>
+Jettyçš„æ¶æ„æ˜¯åŸºäºHandleræ¥å®ç°çš„ï¼Œä¸»è¦çš„æ‰©å±•åŠŸèƒ½éƒ½å¯ä»¥ç”¨Handleræ¥å®ç°ï¼Œæ‰©å±•ç®€å•ã€‚<br/>
+Tomcatçš„æ¶æ„æ˜¯åŸºäºå®¹å™¨è®¾è®¡çš„ï¼Œè¿›è¡Œæ‰©å±•æ˜¯éœ€è¦äº†è§£Tomcatçš„æ•´ä½“è®¾è®¡ç»“æ„ï¼Œä¸æ˜“æ‰©å±•ã€‚<br/><br/>
 
-&nbsp;&nbsp;&nbsp;&nbsp;2.      ĞÔÄÜ±È½Ï<br/>
-JettyºÍTomcatĞÔÄÜ·½Ãæ²îÒì²»´ó<br/>
-Jetty¿ÉÒÔÍ¬Ê±´¦Àí´óÁ¿Á¬½Ó¶øÇÒ¿ÉÒÔ³¤Ê±¼ä±£³ÖÁ¬½Ó£¬ÊÊºÏÓÚwebÁÄÌìÓ¦ÓÃµÈµÈ¡£<br/>
-JettyµÄ¼Ü¹¹¼òµ¥£¬Òò´Ë×÷Îª·şÎñÆ÷£¬Jetty¿ÉÒÔ°´Ğè¼ÓÔØ×é¼ş£¬¼õÉÙ²»ĞèÒªµÄ×é¼ş£¬¼õÉÙÁË·şÎñÆ÷ÄÚ´æ¿ªÏú£¬´Ó¶øÌá¸ß·şÎñÆ÷ĞÔÄÜ¡£<br/>
-JettyÄ¬ÈÏ²ÉÓÃNIO½áÊøÔÚ´¦ÀíI/OÇëÇóÉÏ¸üÕ¼ÓÅÊÆ£¬ÔÚ´¦Àí¾²Ì¬×ÊÔ´Ê±£¬ĞÔÄÜ½Ï¸ß<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2.      æ€§èƒ½æ¯”è¾ƒ<br/>
+Jettyå’ŒTomcatæ€§èƒ½æ–¹é¢å·®å¼‚ä¸å¤§<br/>
+Jettyå¯ä»¥åŒæ—¶å¤„ç†å¤§é‡è¿æ¥è€Œä¸”å¯ä»¥é•¿æ—¶é—´ä¿æŒè¿æ¥ï¼Œé€‚åˆäºwebèŠå¤©åº”ç”¨ç­‰ç­‰ã€‚<br/>
+Jettyçš„æ¶æ„ç®€å•ï¼Œå› æ­¤ä½œä¸ºæœåŠ¡å™¨ï¼ŒJettyå¯ä»¥æŒ‰éœ€åŠ è½½ç»„ä»¶ï¼Œå‡å°‘ä¸éœ€è¦çš„ç»„ä»¶ï¼Œå‡å°‘äº†æœåŠ¡å™¨å†…å­˜å¼€é”€ï¼Œä»è€Œæé«˜æœåŠ¡å™¨æ€§èƒ½ã€‚<br/>
+Jettyé»˜è®¤é‡‡ç”¨NIOç»“æŸåœ¨å¤„ç†I/Oè¯·æ±‚ä¸Šæ›´å ä¼˜åŠ¿ï¼Œåœ¨å¤„ç†é™æ€èµ„æºæ—¶ï¼Œæ€§èƒ½è¾ƒé«˜<br/><br/>
  
-TomcatÊÊºÏ´¦ÀíÉÙÊı·Ç³£·±Ã¦µÄÁ´½Ó£¬Ò²¾ÍÊÇËµÁ´½ÓÉúÃüÖÜÆÚ¶ÌµÄ»°£¬TomcatµÄ×ÜÌåĞÔÄÜ¸ü¸ß¡£<br/>
-TomcatÄ¬ÈÏ²ÉÓÃBIO´¦ÀíI/OÇëÇó£¬ÔÚ´¦Àí¾²Ì¬×ÊÔ´Ê±£¬ĞÔÄÜ½Ï²î¡£<br/>
+Tomcaté€‚åˆå¤„ç†å°‘æ•°éå¸¸ç¹å¿™çš„é“¾æ¥ï¼Œä¹Ÿå°±æ˜¯è¯´é“¾æ¥ç”Ÿå‘½å‘¨æœŸçŸ­çš„è¯ï¼ŒTomcatçš„æ€»ä½“æ€§èƒ½æ›´é«˜ã€‚<br/>
+Tomcaté»˜è®¤é‡‡ç”¨BIOå¤„ç†I/Oè¯·æ±‚ï¼Œåœ¨å¤„ç†é™æ€èµ„æºæ—¶ï¼Œæ€§èƒ½è¾ƒå·®ã€‚<br/>
  
-&nbsp;&nbsp;&nbsp;&nbsp;3.      ÆäËü±È½Ï<br/>
-JettyµÄÓ¦ÓÃ¸ü¼Ó¿ìËÙ£¬ĞŞ¸Ä¼òµ¥£¬¶ÔĞÂµÄServlet¹æ·¶µÄÖ§³Ö½ÏºÃ£¬ËùÒÔ±È½ÏÊÜÆóÒµµÄ»¶Ó­¡£<br/>
-TomcatÄ¿Ç°Ó¦ÓÃ±È½Ï¹ã·º£¬¶ÔJavaEEºÍServletµÄÖ§³Ö¸ü¼ÓÈ«Ãæ£¬ºÜ¶àÌØĞÔ»áÖ±½Ó¼¯³É½øÀ´¡£<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3.      å…¶å®ƒæ¯”è¾ƒ<br/>
+Jettyçš„åº”ç”¨æ›´åŠ å¿«é€Ÿï¼Œä¿®æ”¹ç®€å•ï¼Œå¯¹æ–°çš„Servletè§„èŒƒçš„æ”¯æŒè¾ƒå¥½ï¼Œæ‰€ä»¥æ¯”è¾ƒå—ä¼ä¸šçš„æ¬¢è¿ã€‚<br/>
+Tomcatç›®å‰åº”ç”¨æ¯”è¾ƒå¹¿æ³›ï¼Œå¯¹JavaEEå’ŒServletçš„æ”¯æŒæ›´åŠ å…¨é¢ï¼Œå¾ˆå¤šç‰¹æ€§ä¼šç›´æ¥é›†æˆè¿›æ¥ã€‚<br/>
 
-## IntelliJ IDEAµÄmavenÏîÄ¿ÈçºÎÊ¹ÓÃjettyÆô¶¯
-1¡¢Ê×ÏÈÎÒÃÇÒªÔÚmavenÖĞ°²×°jetty²å¼ş£¨ÆäÊµ¾ÍÊÇÏÂÔØÒ»¸öjar°ü,ÓÃÀ´Óëidea½øĞĞ¼¯³É£©Õâ¸ö²å¼şÖ»ĞèÒªÔÚpom.xmlÖĞ½øĞĞÈçÏÂÅäÖÃ£º</br>
+## IntelliJ IDEAçš„mavené¡¹ç›®å¦‚ä½•ä½¿ç”¨jettyå¯åŠ¨
+1ã€é¦–å…ˆæˆ‘ä»¬è¦åœ¨mavenä¸­å®‰è£…jettyæ’ä»¶ï¼ˆå…¶å®å°±æ˜¯ä¸‹è½½ä¸€ä¸ªjaråŒ…,ç”¨æ¥ä¸ideaè¿›è¡Œé›†æˆï¼‰è¿™ä¸ªæ’ä»¶åªéœ€è¦åœ¨pom.xmlä¸­è¿›è¡Œå¦‚ä¸‹é…ç½®ï¼š</br>
 <pre><code class="markdown">
- <!--jetty²å¼ş-->
+ <!--jettyæ’ä»¶-->
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
@@ -63,7 +63,7 @@ TomcatÄ¿Ç°Ó¦ÓÃ±È½Ï¹ã·º£¬¶ÔJavaEEºÍServletµÄÖ§³Ö¸ü¼ÓÈ«Ãæ£¬ºÜ¶àÌØĞÔ»áÖ±½Ó¼¯³É½øÀ´¡
                         <contextPath>/${project.artifactId}</contextPath>
                     </webAppConfig>
                     <connectors>                    
-                        <!--¿ÉÒÔ×Ô¶¨Òå¶Ë¿ÚºÅ£¬Ò²¿ÉÒÔÔÚidea×Ô¼ºÉèÖÃ£¬ÏÂÃæ»á½²µ½ÈçºÎÔÚideaÖĞÉèÖÃ¶Ë¿ÚºÅ-->
+                        <!--å¯ä»¥è‡ªå®šä¹‰ç«¯å£å·ï¼Œä¹Ÿå¯ä»¥åœ¨ideaè‡ªå·±è®¾ç½®ï¼Œä¸‹é¢ä¼šè®²åˆ°å¦‚ä½•åœ¨ideaä¸­è®¾ç½®ç«¯å£å·-->
                         <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
                             <port>8086</port>
                         </connector>
@@ -72,7 +72,7 @@ TomcatÄ¿Ç°Ó¦ÓÃ±È½Ï¹ã·º£¬¶ÔJavaEEºÍServletµÄÖ§³Ö¸ü¼ÓÈ«Ãæ£¬ºÜ¶àÌØĞÔ»áÖ±½Ó¼¯³É½øÀ´¡
             </plugin>
 </code></pre><br/>
 
-2¡¢Ö®ºóÅäÖÃjettyÆô¶¯ËùÒÀÀµµÄjar°ü<br/>
+2ã€ä¹‹åé…ç½®jettyå¯åŠ¨æ‰€ä¾èµ–çš„jaråŒ…<br/>
 <pre><code class="markdown">
  <!-- jetty -->
         <dependency>
@@ -89,17 +89,18 @@ TomcatÄ¿Ç°Ó¦ÓÃ±È½Ï¹ã·º£¬¶ÔJavaEEºÍServletµÄÖ§³Ö¸ü¼ÓÈ«Ãæ£¬ºÜ¶àÌØĞÔ»áÖ±½Ó¼¯³É½øÀ´¡
         </dependency>
 </code></pre><br/>
 
-3¡¢½ÓÏÂÀ´ÔÚIDEAÖĞ½øĞĞMAVENÏîÄ¿jettyÆô¶¯ÅäÖÃ£º<br/>
-1)Ê×ÏÈÔÚIDEAÖĞµÄÔËĞĞÅäÖÃÖĞÑ¡ÔñEdit configurationµã»÷½øÈ¥£º<br/>
-![ÈçÍ¼1](http://p.blog.csdn.net/images/p_blog_csdn_net/liuzhengkang/EntryImages/20080912/58adc9e7b4725349c149a.jpg)<br/>
-2)Ö®ºó½øÈëÈçÏÂÍ¼ËùÊ¾£¬²é¿´ÊÇ·ñ´æÔÚmavenÏîÄ¿Æô¶¯ÅäÖÃ£¬²»´æÔÚµã»÷¡®+¡¯ºÅ½øĞĞÌí¼Ó<br/>
-![ÈçÍ¼2](http://p.blog.csdn.net/images/p_blog_csdn_net/liuzhengkang/EntryImages/20080912/58adc9e7b4725349c149a.jpg)<br/>
-![ÈçÍ¼3](http://p.blog.csdn.net/images/p_blog_csdn_net/liuzhengkang/EntryImages/20080912/58adc9e7b4725349c149a.jpg)<br/>
-3)Ö®ºó¶ÔÖ´ĞĞÓ¦ÓÃ½øĞĞÃüÃû£¬²¢ÅäÖÃÖ´ĞĞÎÄ¼ş£ºorg.mortbay.jetty:maven-jetty-plugin:6.1.22:run<br/>
-![ÈçÍ¼4](http://p.blog.csdn.net/images/p_blog_csdn_net/liuzhengkang/EntryImages/20080912/58adc9e7b4725349c149a.jpg)<br/>
-4)Èç¹û¶Ôpom.xmlÅäÖÃµÄ¶Ë¿ÚºÅºÜ²»Ë¬µÄ»°£¬ÄãÒ²¿ÉÒÔÔÚÕâÀïµÄrunnerÑ¡Ïî¿¨ÖĞ½øĞĞ¸²¸Ç£º<br/>
-![ÈçÍ¼5](http://p.blog.csdn.net/images/p_blog_csdn_net/liuzhengkang/EntryImages/20080912/58adc9e7b4725349c149a.jpg)<br/>
-5)ÔÚ¿ØÖÆÌ¨Èç¹ûÊä³öÈçÏÂĞÅÏ¢Ôò±íÊ¾jettyÆô¶¯³É¹¦£º<br/>
-![ÈçÍ¼6](http://p.blog.csdn.net/images/p_blog_csdn_net/liuzhengkang/EntryImages/20080912/58adc9e7b4725349c149a.jpg)<br/>
-6)ÔÚä¯ÀÀÆ÷ÖĞ½øĞĞ·ÃÎÊhttp://localhost:8081/{ÄãµÄÏîÄ¿Ãû³Æ}/:<br/>
-![ÈçÍ¼7](http://p.blog.csdn.net/images/p_blog_csdn_net/liuzhengkang/EntryImages/20080912/58adc9e7b4725349c149a.jpg)<br/>
+3ã€æ¥ä¸‹æ¥åœ¨IDEAä¸­è¿›è¡ŒMAVENé¡¹ç›®jettyå¯åŠ¨é…ç½®ï¼š<br/>
+1)é¦–å…ˆåœ¨IDEAä¸­çš„è¿è¡Œé…ç½®ä¸­é€‰æ‹©Edit configurationç‚¹å‡»è¿›å»ï¼š<br/>
+![å¦‚å›¾1](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyconfig-1.png?raw=true)<br/>
+2)ä¹‹åè¿›å…¥å¦‚ä¸‹å›¾æ‰€ç¤ºï¼ŒæŸ¥çœ‹æ˜¯å¦å­˜åœ¨mavené¡¹ç›®å¯åŠ¨é…ç½®ï¼Œä¸å­˜åœ¨ç‚¹å‡»â€˜+â€™å·è¿›è¡Œæ·»åŠ <br/>
+![å¦‚å›¾2](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-2.png?raw=true)<br/>
+![å¦‚å›¾3](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-4.png?raw=true)<br/>
+3)ä¹‹åå¯¹æ‰§è¡Œåº”ç”¨è¿›è¡Œå‘½åï¼Œå¹¶é…ç½®æ‰§è¡Œæ–‡ä»¶ï¼šorg.mortbay.jetty:maven-jetty-plugin:6.1.22:run<br/>
+![å¦‚å›¾4](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-6.png?raw=true)<br/>
+4)å¦‚æœå¯¹pom.xmlé…ç½®çš„ç«¯å£å·å¾ˆä¸çˆ½çš„è¯ï¼Œä½ ä¹Ÿå¯ä»¥åœ¨è¿™é‡Œçš„runneré€‰é¡¹å¡ä¸­è¿›è¡Œè¦†ç›–ï¼š<br/>
+![å¦‚å›¾5](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-7.png?raw=true)<br/>
+5)åœ¨æ§åˆ¶å°å¦‚æœè¾“å‡ºå¦‚ä¸‹ä¿¡æ¯åˆ™è¡¨ç¤ºjettyå¯åŠ¨æˆåŠŸï¼š<br/>
+![å¦‚å›¾6](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-8.png?raw=true)<br/>
+![å¦‚å›¾7](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyconfig-9.png?raw=true)<br/>
+6)åœ¨æµè§ˆå™¨ä¸­è¿›è¡Œè®¿é—®http://localhost:8081/{ä½ çš„é¡¹ç›®åç§°}/:<br/>
+![å¦‚å›¾8](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-10.png?raw=true)<br/>
