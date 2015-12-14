@@ -19,7 +19,7 @@ excerpt: 在IntelliJ IDEA的maven项目如何使用jetty启动
 
 
 ## jetty和tomcat的区别
-###相同点：
+### 相同点：
 &nbsp;&nbsp;&nbsp;&nbsp;1.      Tomcat和Jetty都是一种Servlet引擎，他们都支持标准的servlet规范和JavaEE的规范。<br/>
  
  
@@ -70,7 +70,6 @@ Tomcat目前应用比较广泛，对JavaEE和Servlet的支持更加全面，很�
             </plugin>
 
 2、之后配置jetty启动所依赖的jar包<br/>
- <!-- jetty -->
         <dependency>
             <groupId>org.eclipse.jetty.aggregate</groupId>
             <artifactId>jetty-webapp</artifactId>
