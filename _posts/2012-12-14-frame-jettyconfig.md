@@ -37,7 +37,6 @@ Jetty默认采用NIO结束在处理I/O请求上更占优势，在处理静态资
  
 Tomcat适合处理少数非常繁忙的链接，也就是说链接生命周期短的话，Tomcat的总体性能更高。<br/>
 Tomcat默认采用BIO处理I/O请求，在处理静态资源时，性能较差。<br/>
- 
 &nbsp;&nbsp;&nbsp;&nbsp;3.      其它比较<br/>
 Jetty的应用更加快速，修改简单，对新的Servlet规范的支持较好，所以比较受企业的欢迎。<br/>
 Tomcat目前应用比较广泛，对JavaEE和Servlet的支持更加全面，很多特性会直接集成进来。<br/>
@@ -88,17 +87,17 @@ Tomcat目前应用比较广泛，对JavaEE和Servlet的支持更加全面，很�
 </code></pre><br/>
 
 3、接下来在IDEA中进行MAVEN项目jetty启动配置：<br/>
-1)首先在IDEA中的运行配置中选择Edit configuration点击进去：<br/>
-![如图1](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyconfig-1.png?raw=true)<br/>
-2)之后进入如下图所示，查看是否存在maven项目启动配置，不存在点击‘+’号进行添加<br/>
-![如图2](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-2.png?raw=true)<br/>
-![如图3](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-4.png?raw=true)<br/>
-3)之后对执行应用进行命名，并配置执行文件：org.mortbay.jetty:maven-jetty-plugin:6.1.22:run<br/>
-![如图4](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-6.png?raw=true)<br/>
-4)如果对pom.xml配置的端口号很不爽的话，你也可以在这里的runner选项卡中进行覆盖：<br/>
-![如图5](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-7.png?raw=true)<br/>
-5)在控制台如果输出如下信息则表示jetty启动成功：<br/>
-![如图6](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-8.png?raw=true)<br/>
-![如图7](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyconfig-9.png?raw=true)<br/>
-6)在浏览器中进行访问http://localhost:8081/{你的项目名称}/:<br/>
-![如图8](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-10.png?raw=true)<br/>
+1)首先在IDEA中的运行配置中选择Edit configuration点击进去：<br/><br/>
+![如图1](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyconfig-1.png?raw=true)<br/><br/>
+2)之后进入如下图所示，查看是否存在maven项目启动配置，不存在点击‘+’号进行添加<br/><br/>
+![如图2](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-2.png?raw=true)<br/><br/>
+![如图3](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-4.png?raw=true)<br/><br/>
+3)之后对执行应用进行命名，并配置执行文件：org.mortbay.jetty:maven-jetty-plugin:6.1.22:run<br/><br/>
+![如图4](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-6.png?raw=true)<br/><br/>
+4)如果对pom.xml配置的端口号很不爽的话，你也可以在这里的runner选项卡中进行覆盖：<br/><br/>
+![如图5](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-7.png?raw=true)<br/><br/>
+5)在控制台如果输出如下信息则表示jetty启动成功：<br/><br/>
+![如图6](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-8.png?raw=true)<br/><br/>
+![如图7](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyconfig-9.png?raw=true)<br/><br/>
+6)在浏览器中进行访问http://localhost:8081/{你的项目名称}/:<br/><br/>
+![如图8](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2015-12-14-jettyConfig-10.png?raw=true)<br/><br/>
