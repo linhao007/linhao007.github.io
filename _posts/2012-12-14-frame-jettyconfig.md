@@ -70,21 +70,20 @@ Tomcat目前应用比较广泛，对JavaEE和Servlet的支持更加全面，很�
             </plugin>
 
 2、之后配置jetty启动所依赖的jar包<br/>
-<pre><code class="markdown">
- <!-- jetty -->
-        <dependency>
-            <groupId>org.eclipse.jetty.aggregate</groupId>
-            <artifactId>jetty-webapp</artifactId>
-            <version>${jetty.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-jsp</artifactId>
-            <version>${jetty.version}</version>
-            <scope>test</scope>
-        </dependency>
-</code></pre><br/>
+<p> &lt;!-- jetty --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.eclipse.jetty.aggregate&lt;/groupId&gt;
+            &lt;artifactId&gt;jetty-webapp&lt;/artifactId&gt;
+            &lt;version&gt;${jetty.version}&lt;/version&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;
+            &lt;artifactId&gt;jetty-jsp&lt;/artifactId&gt;
+            &lt;version&gt;${jetty.version}&lt;/version&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;</p>
+<br/><br/>
 
 3、接下来在IDEA中进行MAVEN项目jetty启动配置：<br/>
 1)首先在IDEA中的运行配置中选择Edit configuration点击进去：<br/><br/>
