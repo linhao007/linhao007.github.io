@@ -44,7 +44,6 @@ Tomcat目前应用比较广泛，对JavaEE和Servlet的支持更加全面，很�
 
 ## IntelliJ IDEA的maven项目如何使用jetty启动
 1、首先我们要在maven中安装jetty插件（其实就是下载一个jar包,用来与idea进行集成）这个插件只需要在pom.xml中进行如下配置：</br>
-<pre><code class="markdown">
  <!--jetty插件-->
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
@@ -70,7 +69,6 @@ Tomcat目前应用比较广泛，对JavaEE和Servlet的支持更加全面，很�
                     </connectors>
                 </configuration>
             </plugin>
-</code></pre><br/>
 
 2、之后配置jetty启动所依赖的jar包<br/>
 <pre><code class="markdown">
