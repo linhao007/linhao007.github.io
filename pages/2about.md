@@ -1,21 +1,24 @@
 ---
 layout: page
-title: About
+title: private 资料
 permalink: /about/
 icon: glyphicon-heart
 ---
 
 ### 关于我
 
-> 2015年我将步入找工作的大潮，希望做一个java开发工程师。   
+> 2015年我将步入找工作的大潮，希望做一个java研发工程师。
+![](https://github.com/linhao007/linhao007.github.io/blob/master/css/private/1_olinhao007.jpg)<br/><br/>
 
-在校本科生一枚，就读于江西农业大学软件工程专业，2016年毕业。   
+>在校本科生一枚，就读于江西农业大学软件工程专业，2016年毕业。   
 
-主要兴趣集中在java后台研发，面向对象的概念深入我心。
+>主要兴趣集中在java后台研发，面向对象的概念深入我心。
 
-很喜欢这么一句话：每天进步一点点，方向比距离更重要。  
+>很喜欢这么一句话：每天进步一点点，方向比距离更重要。  
 
-还有，学习是一个非常愉快的过程。共同加油！   
+>还有，学习是一个非常愉快的过程。共同加油！
+   
+>最后，单身，性别男，爱好女。
 
 ---
 
@@ -32,6 +35,8 @@ icon: glyphicon-heart
 
 这个博客主要用于记录一下java学习路上的风景。
 
+2016.06.02 | 重拾git博客，不急不躁，不骚不色，记录工作总结。
+
 2015.12.11 | 搭建该网站。
 
 通过搭建这个静态博客，学到最多的就是 Git 的语法了，现在对 Git 的操作越来越熟练了。  
@@ -40,7 +45,7 @@ icon: glyphicon-heart
 
 #### 友情链接
 
-[羡辙杂俎](http://zhangwenli.com/blog) \| [Anotherhome](https://www.anotherhome.net) \| [Reverland](http://reverland.org/) \| [ZhiLi](http://lizhipower.github.io/) \| [Simmer](http://simmer-jun.github.io/) \| [awthink](http://awthink.net/) \| [Aralic](http://aralic.github.io/)
+[个人CSDN博客](http://blog.csdn.net/linhu007?viewmode=contents) \| [Anotherhome](https://www.anotherhome.net) \| [Reverland](http://reverland.org/) \| [ZhiLi](http://lizhipower.github.io/) \| [Simmer](http://simmer-jun.github.io/) \| [awthink](http://awthink.net/) \| [Aralic](http://aralic.github.io/)
 
 Comment below to exchange link with me.  
 
