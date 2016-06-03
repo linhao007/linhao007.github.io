@@ -8,7 +8,7 @@ icon: glyphicon-heart
 ### 关于我
 
 > 2015年我将步入找工作的大潮，希望做一个java研发工程师。
-![帅的一逼](https://github.com/linhao007/www.linhao007.com/blob/master/css/private/1_olinhao007.jpg)<br/><br/>
+![帅的一逼](https://github.com/linhao007/linhao007.github.io/blob/master/css/private/1_olinhao007.jpg)<br/><br/>
 
 >在校本科生一枚，就读于江西农业大学软件工程专业，2016年毕业。   
 
@@ -31,13 +31,13 @@ icon: glyphicon-heart
 
 ---
 
-### 关于本站   
+### 路漫漫兮修远兮 吾将上下而求索 
 
 这个博客主要用于记录一下java学习路上的风景。
 
-2016.06.02 | 重拾git博客，不急不躁，不骚不色，记录工作总结。
+2016.06.02 | 重拾git博客，不急不躁，不骚不色，记录工作总结。|
 
-2015.12.11 | 搭建该网站。
+2015.12.11 | 搭建该网站。|
 
 通过搭建这个静态博客，学到最多的就是 Git 的语法了，现在对 Git 的操作越来越熟练了。  
 
