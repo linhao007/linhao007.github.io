@@ -1,6 +1,6 @@
 ---
 layout: page
-title: private 资料
+title:  信息
 permalink: /about/
 icon: glyphicon-heart
 ---

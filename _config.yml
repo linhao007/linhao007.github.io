@@ -8,13 +8,16 @@ description: 林浩的博客 java爱好者
 #   Google search results) and in your feed.xml site description.
 
 # baseurl: "" # the subpath of your site, e.g. /blog/
-# url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://www.linhao007.com" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
 github_username:  linhao007
 permalink: /:year/:month/:day/:title/
 
 # Build settings
 markdown: kramdown
+encoding:utf-8
+paginate:10
+paginate_path:"page:num"
 # highlight
 # 本地用rouge, github上用pygments
 # highlighter: pygments
