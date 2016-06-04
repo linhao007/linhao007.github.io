@@ -17,13 +17,11 @@ excerpt: 在IntelliJ IDEA的maven项目如何使用jetty启动
 &nbsp;&nbsp;&nbsp;&nbsp;Jetty 是一个开源的servlet容器，它为基于Java的web容器，例如JSP和servlet提供运行环境。Jetty是使用Java语言编写的，它的API以一组JAR包的形式发布。
 开发人员可以将Jetty容器实例化成一个对象，可以迅速为一些独立运行（stand-alone）的Java应用提供网络和web连接。[摘自百度百科](http://baike.baidu.com/link?url=qISf-60N2e1v1DqK60Z5ZOLgZw_EM38M59mhbfzBAZqkIg1o0PPKsIsDD80Q4K14SeoRRBEpieEtWQTWdsXDpq) <br/>
 
-
 ## jetty和tomcat的区别
 
 ### 相同点：
 &nbsp;&nbsp;&nbsp;&nbsp;1.      Tomcat和Jetty都是一种Servlet引擎<br>
 他们都支持标准的servlet规范和JavaEE的规范。<br/>
- 
  
 ### 不同点：
 &nbsp;&nbsp;&nbsp;&nbsp;1.      架构比较<br/>
