@@ -2,7 +2,7 @@
 layout: post
 title:  "在spring boot里面进行jetty的启动"
 date:   2015-12-14 14:06:05
-categories: 企业框架
+categories: 工作感悟
 excerpt: 在IntelliJ IDEA的maven项目如何使用jetty启动
 ---
 
@@ -42,7 +42,7 @@ Jetty的应用更加快速，修改简单，对新的Servlet规范的支持较�
 Tomcat目前应用比较广泛，对JavaEE和Servlet的支持更加全面，很多特性会直接集成进来。<br/>
 
 ## IntelliJ IDEA的maven项目如何使用jetty启动
-1、首先我们要在maven中安装jetty插件（其实就是下载一个jar包,用来与idea进行集成）这个插件只需要在pom.xml中进行如下配置：</br>
+1、首先我们要在maven中安装jetty插件（其实就是下载一个jar包,用来与idea进行集成）这个插件只需要在pom.xml中进行如下配置：
 <pre><code>        &lt;plugin&gt;
             &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;
             &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;
