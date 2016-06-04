@@ -258,6 +258,7 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
         }
     }
 </code></pre>
+
 2)、取消状态处理类---接口类：BaseCancelStatus
 <pre><code>
     /**
@@ -708,4 +709,5 @@ public class CancelStatus extends BaseStatusService implements  BaseCancelStatus
 		}
 	}
 </code></pre>
+
 这个取消状态有点累赘，有想过从新管理一下（内嵌一个状态模式单独对这些取消状态从新管理），但是一时想不出比较好的办法。
