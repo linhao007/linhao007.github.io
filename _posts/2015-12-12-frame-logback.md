@@ -2,7 +2,7 @@
 layout: post
 title:  "在spring boot里面进行logback的搭建"
 date:   2015-12-12 14:06:05
-categories:工作感悟
+categories: 工作感悟
 excerpt: logbak搭建
 ---
 
