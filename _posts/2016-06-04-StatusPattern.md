@@ -189,7 +189,7 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
     }
 </code></pre>
 
-4、具体实现类（由于状态居多，我举例AcceptOrderStatus、CancelStatus--这个状态下还细分客户爽约、协商撤单、超时取消于是又抽象出一个接口来管理这些状态)状态实现类只需要继承BaseStatusService在相应的方法中实现即可<br>
+4、具体实现类（由于状态居多，我举例AcceptOrderStatus、CancelStatus--这个状态下还细分客户爽约、协商撤单、超时取消于是又抽象出一个接口来管理这些状态)状态实现类只需要继承BaseStatusService在相应的方法中实现即可
 1)已接单状态处理类AcceptOrderStatus：
 <pre><code>
     /**
@@ -259,7 +259,7 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
     }
 </code></pre><br>
 
-2、取消状态处理类---接口类：BaseCancelStatus
+2)、取消状态处理类---接口类：BaseCancelStatus
 <pre><code>
     /**
      * Created by liinhao007 on 2016/5/25.
@@ -710,4 +710,5 @@ public class CancelStatus extends BaseStatusService implements  BaseCancelStatus
 	}
 }
 </code><pre>
+
 这个取消状态有点累赘，有想过从新管理一下（内嵌一个状态模式单独对这些取消状态从新管理），但是一时想不出比较好的办法。
