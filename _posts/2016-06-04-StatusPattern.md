@@ -38,8 +38,7 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
 
 #### 设计解析
 1、上下文环境（ManageStatus）:主要对客户同步过来的订单根据订单状态调用不同状态逻辑处理类，进而管理上下文，用于服务层调用。
-<pre><code> 
-     
+<pre><code>    
     /**
      * Created by linhao007 on 2016/5/25.
      */
@@ -84,7 +83,6 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
     		return myResult;
     	}
     }
-
 </code></pre>
 
 2、抽象状态（Status）:定义一个接口来描述各个状态的一个特定状态行为。
@@ -190,11 +188,9 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
     	public abstract boolean cancelOrderSuper();
 
     }
-
 </code></pre>
 
 4、具体实现类（由于状态居多，我举例AcceptOrderStatus、CancelStatus--这个状态下还细分客户爽约、协商撤单、超时取消于是又抽象出一个接口来管理这些状态)状态实现类只需要继承BaseStatusService在相应的方法中实现即可<br>
-
 1)已接单状态处理类AcceptOrderStatus：
 <pre><code>
     /**
@@ -263,7 +259,6 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
         }
 
     }
-
 </code></pre>
 
 2、取消状态处理类---接口类：BaseCancelStatus
@@ -305,7 +300,7 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
         GuaResult customerCancel(OrderStatusData orderStatusData, List<CarWashOrderDto> carWashOrderDtos);
 
     }
-</code></pre><br>
+</code></pre>
 
 取消状态具体实现：CancelStatus
 <pre><code>
@@ -716,6 +711,5 @@ public class CancelStatus extends BaseStatusService implements  BaseCancelStatus
 		this.orderStatusData = orderStatusData;
 	}
 }
-
 </code><pre>
 这个取消状态有点累赘，有想过从新管理一下（内嵌一个状态模式单独对这些取消状态从新管理），但是一时想不出比较好的办法。
