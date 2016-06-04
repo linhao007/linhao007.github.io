@@ -186,7 +186,6 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
     	 * @return
            */
     	public abstract boolean cancelOrderSuper();
-
     }
 </code></pre>
 
@@ -257,9 +256,8 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
         public void setOrderDto(OrderDto orderDto) {
             this.orderDto = orderDto;
         }
-
     }
-</code></pre>
+</code></pre><br>
 
 2、取消状态处理类---接口类：BaseCancelStatus
 <pre><code>
