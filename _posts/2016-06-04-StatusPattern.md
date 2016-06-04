@@ -37,8 +37,7 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
 ![如图2](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/2016-06-04-statusPattern2.jpg?raw=true)<br/><br/>
 
 #### 设计解析
-1、上下文环境（ManageStatus）:主要对客户同步过来的订单根据订单状态调用不同状态逻辑处理类，进而管理上下文，用于服务层调用。
-<pre><code>    
+1、上下文环境（ManageStatus）:主要对客户同步过来的订单根据订单状态调用不同状态逻辑处理类，进而管理上下文，用于服务层调用。<br/>   
     /**
      * Created by linhao007 on 2016/5/25.
      */
@@ -83,10 +82,8 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
     		return myResult;
     	}
     }
-</code></pre>
 
-2、抽象状态（Status）:定义一个接口来描述各个状态的一个特定状态行为。
-<pre><code> 
+2、抽象状态（Status）:定义一个接口来描述各个状态的一个特定状态行为。 <br/>
     /**
      * Created by linhao007 on 2016/5/25.
      */
@@ -98,10 +95,8 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
          */
         GuaResult updateOrderStatus(OrderStatusData orderStatusData);
     }
-</code></pre>
 
-3、装饰类（BaseStatusService）：将每个状态公共行为抽象出来成为父类方法，且继承status接口方便子类状态实现，并提供相应的抽象方法用于修饰子类，这样代码简洁易读。
-<pre><code>
+3、装饰类（BaseStatusService）：将每个状态公共行为抽象出来成为父类方法，且继承status接口方便子类状态实现，并提供相应的抽象方法用于修饰子类，这样代码简洁易读。<br/>
     public abstract class BaseStatusService implements Status {
     	private static final Logger LOGGER = LoggerFactory.getLogger(BaseStatusService.class);
 
@@ -187,11 +182,9 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
            */
     	public abstract boolean cancelOrderSuper();
     }
-</code></pre>
 
-4、具体实现类（由于状态居多，我举例AcceptOrderStatus、CancelStatus--这个状态下还细分客户爽约、协商撤单、超时取消于是又抽象出一个接口来管理这些状态)状态实现类只需要继承BaseStatusService在相应的方法中实现即可
-1)已接单状态处理类AcceptOrderStatus：
-<pre><code>
+4、具体实现类（由于状态居多，我举例AcceptOrderStatus、CancelStatus--这个状态下还细分客户爽约、协商撤单、超时取消于是又抽象出一个接口来管理这些状态)状态实现类只需要继承BaseStatusService在相应的方法中实现即可<br/>
+1)已接单状态处理类AcceptOrderStatus：<br/>
     /**
      * 已接单 Created by linhu007 on 2016/5/25.
      */
@@ -257,9 +250,8 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
             this.orderDto = orderDto;
         }
     }
-</code></pre>
-2)、取消状态处理类---接口类：BaseCancelStatus
-<pre><code>
+
+2)、取消状态处理类---接口类：BaseCancelStatus<br/>
     /**
      * Created by liinhao007 on 2016/5/25.
      */
@@ -297,10 +289,8 @@ excerpt:  状态模式与装饰模式结合对订单扭转进行管理 扩展性
         GuaResult customerCancel(OrderStatusData orderStatusData, List<CarWashOrderDto> carWashOrderDtos);
 
     }
-</code></pre>
 
-取消状态具体实现：CancelStatus
-<pre><code>
+取消状态具体实现：CancelStatus<br/>
 /**
  * 取消状态 Created by linhu007 on 2016/5/25.
  */
@@ -432,8 +422,8 @@ public class CancelStatus extends BaseStatusService implements  BaseCancelStatus
 	 * 客户爽约
 	 * @param orderStatusData
 	 * @param carWashOrderDtos
-     * @return
-     */
+         * @return
+        */
 	@Override
 	public GuaResult customerMiss( OrderStatusData orderStatusData,
 			List<CarWashOrderDto> carWashOrderDtos) {
@@ -490,8 +480,8 @@ public class CancelStatus extends BaseStatusService implements  BaseCancelStatus
 	 * 协商撤单
 	 * @param orderStatusData
 	 * @param carWashOrderDtos
-     * @return
-     */
+         * @return
+        */
 	@Override
 	public GuaResult consultCancel(OrderStatusData orderStatusData,
 			List<CarWashOrderDto> carWashOrderDtos) {
@@ -544,8 +534,8 @@ public class CancelStatus extends BaseStatusService implements  BaseCancelStatus
 	 * @param
 	 * @param orderStatusData
 	 * @param carWashOrderDtos
-     * @return
-     */
+         * @return
+        */
 	@Override
 	public GuaResult customerCancel(OrderStatusData orderStatusData,
 			List<CarWashOrderDto> carWashOrderDtos) {
@@ -707,5 +697,4 @@ public class CancelStatus extends BaseStatusService implements  BaseCancelStatus
 		this.orderStatusData = orderStatusData;
 		}
 	}
-
 这个取消状态有点累赘，有想过从新管理一下（内嵌一个状态模式单独对这些取消状态从新管理），但是一时想不出比较好的办法。
