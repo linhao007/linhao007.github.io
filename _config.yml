@@ -14,8 +14,8 @@ github_username:  linhao007
 permalink: /:year/:month/:day/:title/
 
 # Build settings
-markdown: kramdown
-encoding:utf-8
+# markdown: kramdown
+# encoding:utf-8
 paginate:10
 paginate_path:"page:num"
 # highlight
