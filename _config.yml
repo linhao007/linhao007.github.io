@@ -16,8 +16,8 @@ duoshuo_username: linhao007
 # Build settings
 # markdown: kramdown
 # encoding:utf-8
-# paginate:10
-# paginate_path:"page:num"
+paginate:10
+paginate_path:"page:num"
 # highlight
 # 本地用rouge, github上用pygments
 # highlighter: pygments
