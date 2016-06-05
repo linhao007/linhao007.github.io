@@ -13,41 +13,57 @@ layout: default
         {{content}}
       </article>
       <hr>
-      <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a></div>
-      <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+      <div class="bdsharebuttonbox">
+	  <a href="#" class="bds_more" data-cmd="more"></a>
+	  <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	  <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	  <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+	  <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	  <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+	  </div>
+      <script>
+	  window._bd_share_config={
+		  "common":{
+		  "bdSnsKey":{},
+		  "bdText":"",
+		  "bdMini":"2",
+		  "bdMiniList":false,
+		  "bdPic":"",
+		  "bdStyle":"1",
+		  "bdSize":"24"},
+		  "share":{}
+		  };
+		  with(document)0[
+		  (getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+     </script>
     </div>
+
     <div class="post-area post comment">
       <!-- 多说评论框 start -->
-      
-      <div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="http://www.linhao007.com{{ page.url }}"></div>
-      
+      <div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="http://www.linhao007.com/{{ page.url }}">
+	  </div>
       <!-- 多说评论框 end -->
     </div>
   </div>
 
   <div id="content" class="col-sm-3">
-  <div id="myAffix" class="shadow-bottom-center hidden-xs" >
+    <div id="myAffix" class="shadow-bottom-center hidden-xs" >
       <div class="categories-list-header" align="center">
         支持我请点击右上角的
         <a href="https://github.com/kymjs"><button class="btn btn-sm btn-primary js-toggler-target" title="Follow kymjs">Follow</button> </a>
       </div>
-    <!--  <div class="content-text"></div> -->
     </div>
-
     <p>
-      
+
     </p>
-
     <div id="myAffix" class="shadow-bottom-center hidden-xs" >
-
       <div class="categories-list-header" align="center">
         <a href="https://github.com/linhao007/linhao007.github.io/blob/master/_posts/{{ page.date | date: "%Y-%m-%d" }}-01.md"> - -> <font color="#FF0000">文章纠错</font> <- - </a>
       </div>
-      
     </div>
-
-
-    <!-- <div id="myAffix" class="shadow-bottom-center hidden-xs" data-spy="affix" data-offset-top="0" data-offset-bottom="-20"> -->
+    <p>
+      
+    </p>
     <div id="myAffix" class="shadow-bottom-center hidden-xs" >
       <div class="categories-list-header">
         Content
