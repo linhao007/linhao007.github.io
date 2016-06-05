@@ -61,13 +61,24 @@ layout: default
     </div>
   </div>
   <div class="col-sm-3">
+  <div id="myAffix" class="shadow-bottom-center hidden-xs" >
+      <div class="categories-list-header" align="center">
+        支持我请点击右上角的
+        <a href="https://github.com/linhao007"><button class="btn btn-sm btn-primary js-toggler-target" title="Follow linhao007">Follow</button> </a>
+      </div>
+    <!--  <div class="content-text"></div> -->
+    </div>
+
+    <p>
+    </p>
+
     <div class="shadow-corner-curl hidden-xs">
       <div class="categories-list-header">
         博客类别
       </div>
       
       <a href="javascript:;" class="categories-list-item" cate="All">
-        All<span class="my-badge"> {{site.categories | size}}</span>
+        全部<span class="my-badge"> {{site.categories | size}}</span>
       </a>
       {% for category in site.categories %}
         <a href="javascript:;" class="categories-list-item" cate="{{ category | first }}">
