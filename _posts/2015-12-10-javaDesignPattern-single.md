@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "java设计模式之单例模式"
-date:   2015-12-12 14:06:05
+date:   2015-12-10 14:06:05
 categories: Java设计模式
 excerpt: 单例模式基本概念
 ---
