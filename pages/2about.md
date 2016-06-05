@@ -8,7 +8,7 @@ icon: glyphicon-heart
 ### 关于我
 
 > 2015年我将步入找工作的大潮，希望做一个java研发工程师。
-![帅的一逼](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/1_olinhao007.jpg)<br/><br/>
+![帅的一逼](https://github.com/linhao007/linhao007.github.io/blob/master/css/pics/1_olinhao007.jpg?raw=true)<br/><br/>
 
 >在校本科生一枚，就读于江西农业大学软件工程专业，2016年毕业。   
 
