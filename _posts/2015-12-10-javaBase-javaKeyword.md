@@ -2,7 +2,7 @@
 layout: post
 title:  "java关键字理解"
 date:   2015-12-12 14:06:05
-categories: Java基础
+categories: Java进阶
 excerpt: java关键字分析。
 ---
 
