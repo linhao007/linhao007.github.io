@@ -3,7 +3,7 @@
  */
 /* commom */
 body {
-	background-image: url(http://7q5cdt.com1.z0.glb.clouddn.com/bg-canvas_bg.jpg);
+	background-image: url(/images/woodwall2.jpg);
     font-family: 'Microsoft YaHei', 'SimHei', sans-serif;
 }
 article p{
@@ -46,7 +46,7 @@ table td{
 #index a:active {color: #99b}	/* 选定的链接 */
 
 /* navbar */
-nav{
+/* nav{
 	-webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 	-moz-box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 	-o-box-shadow: 0 2px 4px rgba(0,0,0,0.5);
@@ -57,7 +57,30 @@ nav{
 .navbar-nav li{
 	width: 95px;
 	text-align: center;
+} */
+
+.navbar-inverse {
+	background-image: url(/images/woodwall.jpg);
+	border-color: #5f3409
 }
+
+.navbar-inverse .navbar-brand {
+	color: #f5dcc4
+}
+
+.navbar-inverse .navbar-text {
+	color: #f5dcc4
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #f5dcc4
+}
+
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>.active>a:focus {
+	color: #fff;
+	background-color: #5f3409
+}
+
 
 /* index main */
 .main{
