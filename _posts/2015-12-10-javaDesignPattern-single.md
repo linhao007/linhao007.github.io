@@ -1,11 +1,84 @@
 ---
 layout: post
-title:  "设计模式之单例模式"
+title:  "java设计模式之单例模式"
 date:   2015-12-12 14:06:05
 categories: Java设计模式
-excerpt: 单例模式下的并发安全讨论
+excerpt: 单例模式基本概念
 ---
 
 * content
 {:toc}
 
+## 前言
+  &nbsp;&nbsp;最近几天在学习设计模式，对设计模式有点初步的了解，特意写下集中比较常用的设计模式博客，里面包含了自己的一些见解。
+
+## 单例模式
+
+### 概念
+  &nbsp;&nbsp;确保一个类只有一个实例对象，并且自动实例化并向整个系统提供这个实例。
+
+### 类型：创建型模式
+
+### 简介
+  &nbsp;&nbsp;单例模式应该是23中设计模式中最简单的一种设计模式看，主要有三个要素组成：<br/>
+  &nbsp;&nbsp;（1）、私有的构造方法.<br/> 
+  &nbsp;&nbsp;（2）、指向自己实例的私有静态引用 <br/>
+  &nbsp;&nbsp;（3）、以自己实例为返回值的静态的共有方法
+
+### 适用场景
+  &nbsp;&nbsp;（1）、当要用一个类时，又要用该类中的一个实例。<br/>
+  &nbsp;&nbsp;（2）、new 来创建实例时会给程序造成资源的浪费，而且实例越多也不好控制。<br/>
+  &nbsp;&nbsp;（3）、不同的线程调用时，可能会引起不同步的现象。<br/>
+  &nbsp;&nbsp;（4）、需要频繁实例化和销毁的对象。
+
+### 两种经典实现单例的方式:
+  &nbsp;&nbsp;（1）、单例模式根据实例化对象的时机不同分为两种：一种饿汉模式，一种是懒汉模式<br/>
+  &nbsp;&nbsp;（2）、饿汉模式在类被加载的时候就实例化对象交给自己的引用了<br/>
+  &nbsp;&nbsp;（3）、懒汉模式在调用取得实例方法的时候才会实例化对象
+
+#### 饿汉模式：
+
+```
+
+public class SinglePattern {  
+    private static SinglePattern singlePattern = new SinglePattern();  
+    private SinglePattern(){}  
+    public static SinglePattern getInstance(){  
+        return singlePattern;  
+    }  
+    public static void main(String[] args) {  
+        SinglePattern single1 = SinglePattern.getInstance();//饿汉单例创建对象  
+    }  
+} 
+
+```
+
+#### 懒汉模式：
+
+```
+
+public class SinglePattern {  
+    private static SinglePattern singlePattern ;  
+    private SinglePattern(){}  
+    public static synchronized SinglePattern getInstance(){  
+        if(singlePattern == null){  
+            singlePattern = new SinglePattern();  
+        }  
+        return singlePattern;  
+    }  
+    public static void main(String[] args) {  
+        SinglePattern single1 = SinglePattern.getInstance();//懒汉单例创建对象  
+    }  
+}  
+
+```
+
+### 单例模式的优点
+  &nbsp;&nbsp;（1）、在内存中只有一个对象，节省内存空间。<br/>
+  &nbsp;&nbsp;（2）、避免了繁琐的创建销毁对象，可以提高性能。<br/>
+  &nbsp;&nbsp;（3）、可以全局访问。
+
+### 单例模式注意事项
+  &nbsp;&nbsp;（1）、只能使用单例类提供的方法来得到单例对象，千万不要使用反射，这样会实例化一个新对象。<br/>
+  &nbsp;&nbsp;（2）、不要断开单例类对象与类中静态引用。<br/>
+  &nbsp;&nbsp;（3）、多线程使用的时候要注意线程安全问题。
