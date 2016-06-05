@@ -77,6 +77,6 @@ public class DoubleCheckedLock {
   &nbsp;&nbsp;2）连接阶段：这个阶段分为三个步骤，步骤一：验证，当然是验证这个class文件里面的二进制数据是否符合java规范；步骤二：准备，为该类的静态变量分配内存空间，并将变量赋一个默认值，比如int的默认值为0；步骤三：解析，这个阶段就不好解释了，将符号引用转化为直接引用，涉及到指针；<br/>
   &nbsp;&nbsp;3）初始化阶段：当我们主动调用该类的时候，将该类的变量赋于正确的值(这里不要和第二阶段的准备混淆了)，举个例子说明下两个区别，比如一个类里有private static int i = 5; 这个静态变量在"准备"阶段会被分配一个内存空间并且被赋予一个默认值0，当道到初始化阶段的时候会将这个变量赋予正确的值即5，了解了吧！<br/>
   &nbsp;&nbsp;因此，双检锁对于基础类型（比如int）适用。因为基础类型没有调用构造函数这一步。那么对于双检锁中因编译器的优化无法保证执行顺序的问题，具体地说是在C++下是精简指令集(RISC)机器的编译器会重新排列编译器生成的汇编语言指令,从而使代码能够最佳运用RISC处理器的平行特性，因此有可能破坏双检锁模式。对于此问题，查阅了不少解决方案，主要有以下几种：<br/>
-  &nbsp;&nbsp;1)使用memory barrier,，关于merrory barrier的介绍，可参阅博文《Memory barrier》。
+  &nbsp;&nbsp;1)使用memory barrier,，关于merrory barrier的介绍，可参阅博文《Memory barrier》。<br/>
   &nbsp;&nbsp;2）java中可考虑volatile关键字定义新的语意来解决这个问题，关于volatile关键字的使用，可见博文[《volatile关键字》](http://blog.csdn.net/maritimesun/article/details/7838838) <br/>
   &nbsp;&nbsp;个人觉得要在高并发情况下保证你的单例是线程安全，最好使用java原生类型枚举去创建单例，枚举类型是java自带线程安全的例子。
