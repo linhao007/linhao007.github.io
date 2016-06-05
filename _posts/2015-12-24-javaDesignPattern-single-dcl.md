@@ -1,0 +1,82 @@
+---
+layout: post
+title:  "我眼中的单例模式"
+date:   2015-12-24 14:06:05
+categories: Java设计模式
+excerpt: 单例模式深探索
+---
+
+* content
+{:toc}
+
+
+## 单例模式
+  &nbsp;&nbsp;关于单例模式，就不再详细叙述，想必大家都耳熟能详了，简单回顾下吧。以下是单例模式的一个例子：
+
+```
+
+public class DoubleCheckedLock {  
+    private static DoubleCheckedLock instance;    
+
+    public static DoubleCheckedLock getInstance() {    
+        if (instance == null) {    
+            instance=new DoubleCheckedLock();  
+        }    
+        return instance;    
+    }    
+}
+
+```
+
+  &nbsp;&nbsp;上述的例子，如果是在并发的情况下，就会遇到严重的问题。比如线程A在判断instance为空时，进入new操作，new操作还未完成时，此时线程B也运行到判断instance是否为NULL，那么可能就会造成线程A和线程B都在new，那就违背了单例模式的原本含义了。那么既然需要保证只有一个实例，我们是否可以通过synchronized关键字来解决呢？
+
+```
+
+public class DoubleCheckedLock {  
+    private static DoubleCheckedLock instance;    
+        
+    public static synchronized DoubleCheckedLock getInstance() {    
+        if (instance == null) {    
+            instance=new DoubleCheckedLock();  
+        }    
+        return instance;    
+    }    
+}  
+
+```
+
+  &nbsp;&nbsp;不可否认，synchronized关键字是可以保证单例，但是程序的性能却不容乐观，原因在于getInstance()整个方法体都是同步的，这就限定了访问速度。其实我们需要的仅仅是在首次初始化对象的时候需要同步，对于之后的获取不需要同步锁。因此，可以做进一步的改进：
+
+```
+
+public class DoubleCheckedLock {  
+    private static DoubleCheckedLock instance;    
+
+    public static DoubleCheckedLock getInstance() {    
+        if (instance == null) {  //step1  
+            synchronized (DoubleCheckedLock.class) { //step2  
+                if(instance==null){ //step3  
+                    instance=new DoubleCheckedLock(); //step4  
+                }  
+            }  
+        }    
+        return instance;    
+    }    
+}  
+
+```
+
+  &nbsp;&nbsp;这样我们将上锁的粒度降低到了仅仅是初始化实例的那部分，从而使代码即正确又保证了执行效率。这就是所谓的“双检锁”机制（顾名思义）。<br/>
+  &nbsp;&nbsp;双检锁机制的出现确实是解决了多线程并行中不会出现重复new对象，而且也实现了懒加载，但是很可惜，这样的写法在很多平台和优化编译器上是错误的，原因在于：instance=new DoubleCheckedLock()这行代码在不同编译器上的行为是无法预知的。一个优化编译器可以合法地如下实现 instance=new DoubleCheckedLock():<br/>
+  &nbsp;&nbsp;1. 给新的实体instance分配内存;<br/>
+  &nbsp;&nbsp;2. 调用DoubleCheckedLock的构造函数来初始化instance。<br/>
+  &nbsp;&nbsp;现在想象一下有线程A和B在调用DoubleCheckedLock，线程A先进入，在执行到步骤4的时候被踢出了cpu。然后线程B进入，B看到的是instance已经不是null了（内存已经分配），于是它开始放心地使用instance，但这个是错误的，因为A还没有来得及完成instance的初始化,而线程B就返回了未被初始化的instance实例。<br/>
+  &nbsp;&nbsp;当我们结合java虚拟机的类加载过程就会更好理解。对于JVM加载类过程，我还不是很熟悉，所以简要地介绍下：<br/>
+  &nbsp;&nbsp;jvm加载一个类大体分为三个步骤：<br/>
+  &nbsp;&nbsp;1）加载阶段：就是在硬盘上寻找java文件对应的class文件，并将class文件中的二进制数据加载到内存中，将其放在运行期数据区的方法区中去，然后在堆区创建一个java.lang.Class对象，用来封装在方法区内的数据结构；<br/>
+  &nbsp;&nbsp;2）连接阶段：这个阶段分为三个步骤，步骤一：验证，当然是验证这个class文件里面的二进制数据是否符合java规范；步骤二：准备，为该类的静态变量分配内存空间，并将变量赋一个默认值，比如int的默认值为0；步骤三：解析，这个阶段就不好解释了，将符号引用转化为直接引用，涉及到指针；<br/>
+  &nbsp;&nbsp;3）初始化阶段：当我们主动调用该类的时候，将该类的变量赋于正确的值(这里不要和第二阶段的准备混淆了)，举个例子说明下两个区别，比如一个类里有private static int i = 5; 这个静态变量在"准备"阶段会被分配一个内存空间并且被赋予一个默认值0，当道到初始化阶段的时候会将这个变量赋予正确的值即5，了解了吧！<br/>
+  &nbsp;&nbsp;因此，双检锁对于基础类型（比如int）适用。因为基础类型没有调用构造函数这一步。那么对于双检锁中因编译器的优化无法保证执行顺序的问题，具体地说是在C++下是精简指令集(RISC)机器的编译器会重新排列编译器生成的汇编语言指令,从而使代码能够最佳运用RISC处理器的平行特性，因此有可能破坏双检锁模式。对于此问题，查阅了不少解决方案，主要有以下几种：<br/>
+  &nbsp;&nbsp;1)使用memory barrier,，关于merrory barrier的介绍，可参阅博文《Memory barrier》。
+  &nbsp;&nbsp;2）java中可考虑volatile关键字定义新的语意来解决这个问题，关于volatile关键字的使用，可见博文[《volatile关键字》](http://blog.csdn.net/maritimesun/article/details/7838838) <br/>
+  &nbsp;&nbsp;个人觉得要在高并发情况下保证你的单例是线程安全，最好使用java原生类型枚举去创建单例，枚举类型是java自带线程安全的例子。
