@@ -1,32 +1,17 @@
-# About
+## 个人博客
 
-This is my blog based on jekyll. And I change the style and interactive. If you want to use this model of the blog. **Please give a star at this repository**. Then you can clone it as your blog model.
-
-You can visit [here](http://linhao007.github.io) to see this blog.
-
+### 介绍
 ---
+张涛，网名kymjs，在上海的湖北人。移动开发工程师。
 
-这是我的博客，基于 jekyll。我改了所有默认的样式和交互。如果你想使用这个博客模板。**请先在这个仓库上点个star吧**，这也是对我的肯定和鼓励，谢谢了。然后你可以克隆这个仓库用作你自己的博客。
+个人标签：创业者、技术宅、新媒体营销<br>
+关注主题：新媒体营销、移动应用开发、移动互联、商业思考、时间管理、自由职业、学习力。<br>
 
-博客访问地址：[点击这里](http://linhao007.github.io)
-
-**使用时请注明模板来源:  Jekyll theme by [LinHao007](https://github.com/linhao007/linhao007.github.io)**
-
-<!--
-
-## 被引用信息
-
-使用了我的模板并写明来源的人：   
-
-* [dreamholy](http://dreamholy.github.io/)
-
-没有注明来源的人：
-
-* [yangshuailing](http://yangshuailing.github.io/com/)
-* [huapu728](http://huapu728.github.io/)
-* [greatbuger](http://greatbuger.github.io/) 
-
-
--->
-
-
+### 联系方式
+---
+一般我在网上用「kymjs」这个ID进行交流。<br>
+可以通过电子邮件跟我联系：kymjs@gmail.com<br>
+另外，你还可以通过以下方式找到我：<br>
+* 个人博客：[http://www.kymjs.com](http://www.kymjs.com) <br>
+* QQ群：[257053751](http://jq.qq.com/?_wv=1027&k=WoM2Aa)， [201055521](http://jq.qq.com/?_wv=1027&k=MBVdpK)<br>
+* 微信公众号：Android技术分享<br> ![Android技术分享](https://github.com/kymjs/kymjs.github.io/blob/master/images/qrcode.jpg)<br>

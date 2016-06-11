@@ -14,10 +14,26 @@ github_username:  linhao007
 permalink: /:year/:month/:day/:title/
 duoshuo_username: linhao007
 # Build settings
-# markdown: kramdown
+markdown: kramdown
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
 # encoding:utf-8
-# paginate:10
-# paginate_path:"page:num"
+gems: [jekyll-paginate]
+paginate: 10
+paginate_path: "page:num"
 # highlight
 # 本地用rouge, github上用pygments
 # highlighter: pygments
