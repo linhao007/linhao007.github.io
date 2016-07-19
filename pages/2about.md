@@ -45,7 +45,7 @@ icon: glyphicon-heart
 
 #### 友情链接
 
-[个人CSDN博客](http://blog.csdn.net/linhu007?viewmode=contents) \| [Anotherhome](https://www.anotherhome.net) \| [Reverland](http://reverland.org/) \| [ZhiLi](http://lizhipower.github.io/) \| [Simmer](http://simmer-jun.github.io/) \| [awthink](http://awthink.net/) \| [Aralic](http://aralic.github.io/)
+[个人CSDN博客](http://blog.csdn.net/linhu007?viewmode=contents) \|[好友紫雯博客](http://blog.ziwenzou.com/) \| [Anotherhome](https://www.anotherhome.net) \| [Reverland](http://reverland.org/) \| [ZhiLi](http://lizhipower.github.io/) \| [Simmer](http://simmer-jun.github.io/) \| [awthink](http://awthink.net/) \| [Aralic](http://aralic.github.io/)
 
 Comment below to exchange link with me.  
 
