@@ -15,7 +15,7 @@ permalink: /:year/:month/:day/:title/
 duoshuo_username: linhao007
 # Build settings
 markdown: kramdown
-
+pygments: true 
 kramdown:
   auto_ids: true
   footnote_nr: 1
@@ -32,6 +32,7 @@ kramdown:
 
 # encoding:utf-8
 gems: [jekyll-paginate]
+excerpt_separator: ""  
 paginate: 10
 paginate_path: "page:num"
 # highlight
