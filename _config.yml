@@ -32,11 +32,5 @@ kramdown:
 
 # encoding:utf-8
 gems: [jekyll-paginate]
-excerpt_separator: ""  
 paginate: 10
 paginate_path: "page:num"
-# highlight
-# 本地用rouge, github上用pygments
-# highlighter: pygments
-# highlighter: rouge
-# highlighter: false
