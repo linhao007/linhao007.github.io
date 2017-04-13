@@ -62,12 +62,12 @@ layout: default
                 {% elsif page == 1 %}
                   <li class=""><a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}<span class="sr-only">(current)</span></a></li>
                 {% else %}
-                  <li class=""><a href="/{{ site.paginate_path | prepend: site.url | replace: '//', '/' | replace: ':num', page }}">{{ page }}<span class="sr-only">(current)</span></a></li>
+                  <li class=""><a href="/{{ site.paginate_path | replace: '//', '/' | replace: ':num', page }}">{{ page }}<span class="sr-only">(current)</span></a></li>
                 {% endif %}
               {% endfor %}
 
               {% if paginator.next_page %}
-                <li class=""><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous"><span aria-hidden="true">下一页</span></a></li>
+                <li class=""><a href="{{ paginator.next_page_path | replace: '//', '/' }}" aria-label="Previous"><span aria-hidden="true">下一页</span></a></li>
               {% else %}
                 <li class="disabled"><a aria-label="Previous"><span aria-hidden="true">下一页</span></a></li>
               {% endif %}
