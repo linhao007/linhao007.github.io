@@ -6,7 +6,7 @@ github_username:  linhao007
 permalink: /:year/:month/:day/:title/
 duoshuo_username: linhao007
 markdown: kramdown
-# pygments: true 
+pygments: true 
 kramdown:
   auto_ids: true
   footnote_nr: 1
