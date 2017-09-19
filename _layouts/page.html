@@ -12,12 +12,12 @@ layout: default
 </div>
 
 <div class="post-area post comment">
-    <!-- 多说评论框 start -->
-    <!--<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="http://www.linhao007.com{{ page.url }}">
-	</div>-->
-    <!-- 多说评论框 end -->
-    <!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2144967"></script>
-<!-- UY END -->
+<div id="SOHUCS" sid="http://www.linhao007.com{{ page.url }}"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cytdTotz7'; 
+var conf = '32201858e65b520dcf65a6a1c002ed95'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>    
 </div>
