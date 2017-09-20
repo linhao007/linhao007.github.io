@@ -6,16 +6,16 @@ layout: null
   <channel>
     <title>{{ site.title | xml_escape }}</title>
     <description>{{ site.description | xml_escape }}</description>
-    <link>http://www.kymjs.com/</link>
+    <link>http://www.linhao007.com/</link>
     <pubDate>{{ site.time | date: "%Y-%m-%d" }}</pubDate>
     <lastBuildDate>{{ site.time | date: "%Y-%m-%d" }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
     {% for post in site.posts limit:40 %}
       <item>
-        <title>{{ post.title | xml_escape }} - 张涛</title>
-        <description>{{ post.description | xml_escape }} - 开源实验室</description>
+        <title>{{ post.title | xml_escape }} - 林浩</title>
+        <description>{{ post.description | xml_escape }} - 林浩的博客</description>
         <pubDate>{{ post.date | date: "%Y-%m-%d" }}</pubDate>
-        <link>http://www.kymjs.com{{ post.url }}</link>
+        <link>http://www.linhao007.com{{ post.url }}</link>
         {% for tag in post.tags %}
         <tag>{{ tag | xml_escape }}</tag>
         {% endfor %}
